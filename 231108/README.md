@@ -1,18 +1,22 @@
 # 📖 학습하기
 
 ## 📚 단계별 학습
-23년 11월 08일 목표(240px)까지 190px 남았습니다.
+23년 11월 08일 목표(140px)를 달성했어요🥳.
 
-![50xp](https://img.shields.io/badge/EXP-50xp-%235cb85c.svg?for-the-badge)
+![140xp](https://img.shields.io/badge/EXP-140xp-%235cb85c.svg?for-the-badge)
 ![2일째](https://img.shields.io/badge/연속학습-2일째-%23E34F26.svg?for-the-badge)
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-1|50xp|2일째🔥|
+5|140xp|2일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
 |[Novice Mid / 완전탐색 I / 자리 마다 숫자를 정하는 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]개발팀의 능력](https://www.codetree.ai/missions/5/problems/the-capabilities-of-the-development-team)|![보통][medium]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/231108/%EA%B0%9C%EB%B0%9C%ED%8C%80%EC%9D%98%20%EB%8A%A5%EB%A0%A5/the-capabilities-of-the-development-team.cpp)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[개념]좌표평면 위의 특정 구역 2](https://www.codetree.ai/missions/5/problems/specific-zone-above-the-2d-coordinate-2)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/231108/%EC%A2%8C%ED%91%9C%ED%8F%89%EB%A9%B4%20%EC%9C%84%EC%9D%98%20%ED%8A%B9%EC%A0%95%20%EA%B5%AC%EC%97%AD%202/specific-zone-above-the-2d-coordinate-2.cpp)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[개념]가장 가까운 두 점 사이의 거리](https://www.codetree.ai/missions/5/problems/closest-pair-of-points)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/231108/%EA%B0%80%EC%9E%A5%20%EA%B0%80%EA%B9%8C%EC%9A%B4%20%EB%91%90%20%EC%A0%90%20%EC%82%AC%EC%9D%B4%EC%9D%98%20%EA%B1%B0%EB%A6%AC/closest-pair-of-points.cpp)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[개념]삼각형 만들기](https://www.codetree.ai/missions/5/problems/create-triangle)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/231108/%EC%82%BC%EA%B0%81%ED%98%95%20%EB%A7%8C%EB%93%A4%EA%B8%B0/create-triangle.cpp)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]운행 되고 있는 시간](https://www.codetree.ai/missions/5/problems/hours-in-service)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/231108/%EC%9A%B4%ED%96%89%20%EB%90%98%EA%B3%A0%20%EC%9E%88%EB%8A%94%20%EC%8B%9C%EA%B0%84/hours-in-service.cpp)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
