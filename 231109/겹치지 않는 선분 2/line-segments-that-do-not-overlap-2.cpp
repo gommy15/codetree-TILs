@@ -15,22 +15,19 @@ int main() {
         spots[i] = make_pair(x1, x2);
     }
 
-    sort(spots, spots+n);
-
     int cnt = 0;
     for(int i=0; i<n; i++) {
-        x1 = spots[i].first;
-        x2 = spots[i].second;
-
-        int start = spots[i+1].first;
-        int end = spots[i+1].second;
         bool match = false;
-        for(int j=start; j<=end; j++) {
-            if((j-start)/(end-start) == (j-x1)/(x2-x1)) {
+
+        for(int j=0; j<n; j++) {
+            if(i==j) continue;
+
+            if((spots[i].first <= spots[j].first && spots[i].second >= spots[j].second) || (spots[i].first >= spots[j].first && spots[i].second <= spots[j].second)) {
                 match = true;
                 break;
             }
         }
+
         if(!match) cnt++;
     }
 
