@@ -19,7 +19,7 @@ int main() {
     for(int i=0; i<n; i++) {
         for(int j=i+1; j<=i+k; j++) {
             if(arr[i] == arr[j]) {
-                max_num = arr[i];
+                max_num = max(max_num, arr[i]);
             }
         }
     }
