@@ -30,7 +30,10 @@ int main() {
             deliv = student[j].second;
 
             sum += ((-price)+(-deliv));
-            if(sum >b) break;
+            if(sum > b) {
+                sum += (price+deliv);
+                continue;
+            }
             stu_num++;
         }
 
