@@ -32,14 +32,11 @@ int main() {
 
     int diff = days2 - days1;
 
-    // int diff = num_of_month[m1]-d1 + d2;
-    // for(int i=m1+1; i<m2; i++) {
-    //     diff += num_of_month[i];
-    // }
-
     int cnt = diff/7;
+
+    // cout << "diff : " << diff << ", cnt : " << cnt << '\n';
     
-    if (diff%7 <= A_idx) cnt++;
+    if (diff%7 >= A_idx) cnt++;
 
     cout << cnt;
 
