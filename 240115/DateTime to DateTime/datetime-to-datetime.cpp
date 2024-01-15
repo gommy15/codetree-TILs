@@ -9,7 +9,8 @@ int main() {
 
     int diff = (a*24*60 + b*60+c) - (11*24*60 + 11*60 + 11);
 
-    cout << diff;
+    if(diff < 0) cout << -1;
+    else cout << diff;
 
     // 시초
     // int day = 11, hour=11, min=11, time = 0;
