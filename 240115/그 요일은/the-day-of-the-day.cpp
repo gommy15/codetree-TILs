@@ -22,20 +22,20 @@ int main() {
     else if (A == "Sun") A_idx = 6;
 
 
-    // int days1 = d1, days2 = d2;
-    // for(int i=1; i<m1; i++) {
-    //     days1+= num_of_month[i];
-    // }
-    // for(int i=1; i<m2; i++) {
-    //     days2+= num_of_month[i];
-    // }
-
-    // int diff = days2 - days1;
-
-    int diff = num_of_month[m1]-d1 + d2;
-    for(int i=m1+1; i<m2; i++) {
-        diff += num_of_month[i];
+    int days1 = d1, days2 = d2;
+    for(int i=1; i<m1; i++) {
+        days1+= num_of_month[i];
     }
+    for(int i=1; i<m2; i++) {
+        days2+= num_of_month[i];
+    }
+
+    int diff = days2 - days1;
+
+    // int diff = num_of_month[m1]-d1 + d2;
+    // for(int i=m1+1; i<m2; i++) {
+    //     diff += num_of_month[i];
+    // }
 
     int cnt = diff/7;
     
