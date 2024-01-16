@@ -25,7 +25,7 @@ int main() {
             cnt = 1;
         }
     }
-
+    max_cnt = max(max_cnt, cnt);
     cout << max_cnt;
     return 0;
 }
