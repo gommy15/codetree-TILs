@@ -16,16 +16,29 @@ int main() {
         cin >> x>>dir;
 
         if(dir == 'L') {
-            for(int j=now; j>now-x; j--) {
-                arr[j] = 1;
+            while(x--) {
+                arr[now] = 1;
+                if(x) now--;
             }
-            now -= (x-1);
         } else if (dir == 'R') {
-            for(int j=now; j<now+x; j++) {
-                arr[j] = 2;
+            while(x--) {
+                arr[now] = 2;
+                if(x) now++;
             }
-            now += (x-1);
         }
+        
+
+        // if(dir == 'L') {
+        //     for(int j=now; j>now-x; j--) {
+        //         arr[j] = 1;
+        //     }
+        //     now -= (x-1);
+        // } else if (dir == 'R') {
+        //     for(int j=now; j<now+x; j++) {
+        //         arr[j] = 2;
+        //     }
+        //     now += (x-1);
+        // }
 
     }
 
@@ -36,6 +49,6 @@ int main() {
     }
 
     cout << w << ' ' << b;
-    
+
     return 0;
 }
