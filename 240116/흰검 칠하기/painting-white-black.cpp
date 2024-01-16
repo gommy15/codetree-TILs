@@ -15,35 +15,49 @@ int main() {
     for(int i=0; i<n; i++) {
         cin >> x>>dir;
 
+        // if(dir == 'L') {
+        //     while(x--) {
+        //         arr[now] = 1;
+        //         white[now]++;
+        //         if(x) now--;
+        //     }
+        // }
+        // else {
+        //     // x칸 오른쪽으로 칠합니다.
+        //     while(x--) {
+        //         arr[now] = 2;
+        //         black[now]++;
+        //         if(x) now++;
+        //     }
+        // }
+
         if(dir == 'L') {
-            while(x--) {
-                arr[now] = 1;
-                white[now]++;
-                if(x) now--;
+            for(int j = now; j>now-x; j--) {
+                white[j]++;
+                arr[j] = 1;
             }
-        }
-        else {
-            // x칸 오른쪽으로 칠합니다.
-            while(x--) {
-                arr[now] = 2;
-                black[now]++;
-                if(x) now++;
+            now -= (x-1);
+        } else if (dir == 'R') {
+            for(int j=now; j<now+x; j++) {
+                black[j]++;
+                arr[j] = 2;
             }
+            now += (x-1);
         }
 
-        // if(dir == 'L') {
-        //     for(int j = now; j>=now-x; j--) {
-        //         white[j]++;
-        //         arr[j] = 1;
-        //     }
-        //     now -= x;
-        // } else if (dir == 'R') {
-        //     for(int j=now; j<=now+x; j++) {
-        //         black[j]++;
-        //         arr[j] = 2;
-        //     }
-        //     now += x;
+        // for(int j=OFFSET-7; j<=OFFSET+7; j++) {
+        //     cout << white[j] << ' ';
         // }
+        // cout << '\n';
+        // for(int j=OFFSET-7; j<=OFFSET+7; j++) {
+        //     cout << black[j] << ' ';
+        // }
+        // cout << '\n';
+        // for(int j=OFFSET-7; j<=OFFSET+7; j++) {
+        //     cout << arr[j] << ' ';
+        // }
+        // cout << '\n';
+        // cout << '\n';
     }
 
     int bl_num=0, wh_num=0, gr_num=0;
