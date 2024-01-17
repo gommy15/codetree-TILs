@@ -15,13 +15,17 @@ int main() {
         cin >> stu_num;
         student[stu_num]++;
 
-        for(int j=1; j<=n; j++) {
-            if(student[j] >= k) {
-                first_stu = j;
-                break;
-            }
+        if(student[stu_num] >= k) {
+            first_stu = stu_num;
+            break;
         }
-        if(first_stu != -1) break;
+        // for(int j=1; j<=n; j++) {
+        //     if(student[j] >= k) {
+        //         first_stu = j;
+        //         break;
+        //     }
+        // }
+        // if(first_stu != -1) break;
     }
 
     cout << first_stu;
