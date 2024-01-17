@@ -17,12 +17,13 @@ int main() {
 
         if(d == 'L') d_num = -1;
         else d_num = 1;
-        for(int i=idx; i<=idx+t; i++) {
+        for(int i=idx; i<idx+t; i++) {
             arr_A[i] = now;
             now += d_num;
             // cout << arr_A[i] << ' ';
         }
         idx += t;
+        arr_A[idx] = now;
     }
 
     // cout << '\n';
@@ -34,12 +35,13 @@ int main() {
 
         if(d == 'L') d_num = -1;
         else d_num = 1;
-        for(int i=idx; i<=idx+t; i++) {
+        for(int i=idx; i<idx+t; i++) {
             arr_B[i] = now;
             now += d_num;
             // cout << arr_B[i] << ' ';
         }
         idx += t;
+        arr_B[idx] = now;
     }
 
     // cout << '\n';
