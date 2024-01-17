@@ -4,7 +4,7 @@ using namespace std;
 
 int n, m, v, t;
 int now_A[MAX_AR+1], now_B[MAX_AR+1];
-int checked[MAX_AR+1];
+// int checked[MAX_AR+1];
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -30,23 +30,32 @@ int main() {
         }
     }
 
-    int leader = 0;
+    int leader = 0, cnt=0;
     for(int i=1; i<=now; i++) {
         if(now_A[i] > now_B[i]) {
-            checked[i] = 1;
+            if(leader == 2) cnt++;
+
             leader = 1;
+
+            // checked[i] = 1;
+            // leader = 1;
         } else if (now_A[i] < now_B[i]) {
-            checked[i] = 2;
+            if(leader == 1) cnt++;
+
             leader = 2;
-        } else {
-            checked[i] = leader; 
-        }
+
+            // checked[i] = 2;
+            // leader = 2;
+        } 
+        // else {
+        //     checked[i] = leader; 
+        // }
     }
 
-    int cnt = 0;
-    for(int i=1; i<now; i++) {
-        if(checked[i] != checked[i+1]) cnt++;
-    }
+    // int cnt = 0;
+    // for(int i=1; i<now; i++) {
+    //     if(checked[i] != checked[i+1]) cnt++;
+    // }
 
     cout << cnt;
     return 0;
