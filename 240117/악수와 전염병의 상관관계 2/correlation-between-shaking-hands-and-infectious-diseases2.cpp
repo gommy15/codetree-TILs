@@ -21,22 +21,31 @@ int main() {
 
     sort(shack, shack+t);
 
-    check[p] = k;
+    // check[p] = k;
     infect_dev[p] = 1;
     for(int i=0; i<t; i++) {
         tie(tx, x, y) = shack[i];
-        if(infect_dev[x] == 1 && check[x] != 0 && infect_dev[y] == 1 && check[y] != 0){
-            check[x]--;
-            check[y]--;
-        }else if(infect_dev[x] == 1 && check[x] != 0) {
-            infect_dev[y] = 1;
-            check[y] = k;
-            check[x]--;
-        } else if (infect_dev[y] == 1 && check[y] != 0) {
-            infect_dev[x] = 1;
-            check[x] = k;
-            check[y]--;
-        }
+        // cout << tx << ' ' << x << ' ' << y << '\n'; 
+        
+        if(infect_dev[x] == 1) check[x]++;
+        if(infect_dev[y] == 1) check[y]++;
+
+        //감염됐을 때 횟수를 추가하여 비교하는 것 보다 몇 번 악수를 했는지 확인하는 것이 더 간편함
+        if(check[x] <= k && infect_dev[x] == 1) infect_dev[y] = 1;
+        if(check[y] <= k && infect_dev[y] == 1) infect_dev[x] = 1;
+
+        // if(infect_dev[x] == 1 && check[x] != 0 && infect_dev[y] == 1 && check[y] != 0){
+        //     check[x]--;
+        //     check[y]--;
+        // }else if(infect_dev[x] == 1 && check[x] != 0) {
+        //     infect_dev[y] = 1;
+        //     check[y] = k;
+        //     check[x]--;
+        // } else if (infect_dev[y] == 1 && check[y] != 0) {
+        //     infect_dev[x] = 1;
+        //     check[x] = k;
+        //     check[y]--;
+        // }
     }
 
     for(int i=1; i<=n; i++) {
