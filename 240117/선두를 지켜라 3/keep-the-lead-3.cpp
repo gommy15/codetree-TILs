@@ -40,7 +40,7 @@ int main() {
 
         // cout << leader[i] << ' ';
     }
-    cout << '\n';
+    // cout << '\n';
 
     for(int i=1; i<now; i++) {
         if(leader[i] != leader[i+1]) cnt++;
