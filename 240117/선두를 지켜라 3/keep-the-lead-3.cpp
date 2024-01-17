@@ -21,7 +21,7 @@ int main() {
     }
 
     now = 1;
-    cout << now;
+    // cout << now;
     for(int i=0; i<m; i++) {
         cin >>v>>t;
 
@@ -31,14 +31,14 @@ int main() {
         }
     }
 
-    cout << now;
+    // cout << now;
     int cnt = 0;
     for(int i=1; i<now; i++) {
         if(arr_a[i] > arr_b[i]) leader[i] = 1;
         else if (arr_a[i] < arr_b[i]) leader[i] = 2;
         else leader[i] = 3;
 
-        cout << leader[i] << ' ';
+        // cout << leader[i] << ' ';
     }
     cout << '\n';
 
