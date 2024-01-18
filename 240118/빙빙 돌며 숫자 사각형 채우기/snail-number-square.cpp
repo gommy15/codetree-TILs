@@ -16,7 +16,7 @@ int main() {
     int dir_num = 0, num = 1;
     int x = 0, y = 0;
     
-    arr[0][0] = 1;
+    arr[x][y] = 1;
     for(int i=2; i<=n*m; i++) {
         int nx = x+dx[dir_num], ny = y+dy[dir_num];
 
