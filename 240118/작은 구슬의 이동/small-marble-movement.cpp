@@ -6,6 +6,8 @@ int arr[MAX_N][MAX_N];
 int n, t, r, c;
 char d;
 
+//좌표평면 x, y라고 생각하지 말기!!!!
+// 오른쪽으로 가면 열인 y가 증가하고 위로가면 행인 x가 증가한다.
 int dx[4] = {0, 1, -1, 0}, dy[4] = {1, 0, 0, -1};
 
 bool InRange(int x, int y) {
@@ -19,7 +21,7 @@ int main() {
     r--; c--;
     int dir_num;
 
-    
+
     if(d == 'U') dir_num = 2;
     else if (d == 'D') dir_num = 1;
     else if (d == 'R') dir_num = 0;
