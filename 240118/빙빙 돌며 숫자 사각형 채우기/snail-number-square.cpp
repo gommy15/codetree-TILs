@@ -4,6 +4,7 @@ using namespace std;
 
 int arr[MAX_NM][MAX_NM];
 int n, m;
+//행열 혼동하지 말기!!! 기억 필수!!!
 int dx[4] = {0, 1, 0, -1}, dy[4] = {1, 0, -1, 0};
 
 bool InRange(int x, int y) {
