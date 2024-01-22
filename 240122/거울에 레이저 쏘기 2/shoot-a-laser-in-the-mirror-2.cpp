@@ -23,12 +23,12 @@ int main() {
     int x, y, dir;
     if(k <= n) {
         x = 0; y = k-1; dir = 0;
-    } else if (n < k && k <= 2*n) {
+    } else if (k <= 2*n) {
         x = (k-1)%n; y = n-1; dir = 1;
-    } else if (2*n < k && k <= 3*n) {
-        x = n-1; y = (k-1)%n; dir = 2;
+    } else if (k <= 3*n) {
+        x = n-1; y = n-(k%n); dir = 2;
     } else {
-        x = (k-1)%n; y = 0; dir = 3;
+        x = n-(k%n); y = 0; dir = 3;
     }
 
     int cnt = 0;
@@ -42,7 +42,7 @@ int main() {
             x += dx[dir];
             y += dy[dir];
         }
-
+        
         cnt++;
     }
 
