@@ -1,3 +1,5 @@
+// char 비교 유의하기!!!
+
 #include <iostream>
 #include <string>
 #include <algorithm>
