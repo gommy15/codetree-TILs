@@ -22,14 +22,24 @@ int main() {
             x += dx[dir_num];
             y += dy[dir_num];
 
-            if(x ==0 && y == 0) {
-                exist = true;
-                break;
-            }
+            // if(x ==0 && y == 0) {
+            //     exist = true;
+            //     break;
+            // }
+        }
+
+        // 첫번째 문자가 항상 'F'로 주어진다고 가정한다면
+        if(x == 0 && y == 0) {
+            cout << i+1;
+            exist = true;
+            break;
         }
     }
 
-    if(exist) cout << sec;
-    else cout << -1;
+    if(!exist) cout << -1;
+
+
+    // if(exist) cout << sec;
+    // else cout << -1;
     return 0;
 }
