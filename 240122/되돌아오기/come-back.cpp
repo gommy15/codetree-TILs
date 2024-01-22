@@ -2,7 +2,7 @@
 using namespace std;
 
 int n;
-int dx[4] = {0, 1, 0, -1}, dy[4] = {1, 0, -1, 0};
+int dx[4] = {1, -1,  0, 0}, dy[4] = {0,  0, -1, 1};
 char dir;
 int t;
 
@@ -16,8 +16,8 @@ int main() {
 
         int dir_num;
         if(dir == 'E') dir_num = 0;
-        else if (dir == 'S') dir_num = 1;
-        else if (dir == 'W') dir_num = 2;
+        else if (dir == 'W') dir_num = 1;
+        else if (dir == 'S') dir_num = 2;
         else if (dir == 'N') dir_num = 3;
 
         while(t--) {
