@@ -16,14 +16,24 @@ int main() {
 
     int min_sum = INT_MAX;
     for(int i=0; i<n; i++) {
-        int dis = 0;
+        
+        // 두번째 방법
         int sum = 0;
         for(int j=0; j<n; j++) {
-            int idx = i+j;
-            if(idx >= n) idx -= n;
-            sum += (dis*arr[idx]);
-            dis++;
+            int dis = (j -i + n)%n;
+            sum += dis * arr[j];
         }
+
+
+        // 첫번째 방법
+        // int dis = 0;
+        // int sum = 0;
+        // for(int j=0; j<n; j++) {
+        //     int idx = i+j;
+        //     if(idx >= n) idx -= n;
+        //     sum += (dis*arr[idx]);
+        //     dis++;
+        // }
         min_sum = min(min_sum, sum);
     }
 
