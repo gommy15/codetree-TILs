@@ -2,7 +2,8 @@
 using namespace std;
 
 int arr[19][19];
-int dx[4] = {0, 1, 0, -1}, dy[4] = {1, 0, -1, 0};
+// 대각선까지 생각하기!!
+int dx[8] = {1, 1, 1, -1, -1, -1, 0, 0}, dy[8] = {-1, 0, 1, -1, 0, 1, -1, 1};
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -17,7 +18,7 @@ int main() {
     for(int i=0; i<19; i++) {
         for(int j=0; j<19; j++) {
             if(arr[i][j] != 0) {
-                for(int k=0; k<4; k++) {
+                for(int k=0; k<8; k++) {
                     int x = i+dx[k], y = j+dy[k];
                     if(arr[i][j] == arr[x][y]) {
                         int cnt = 2;
