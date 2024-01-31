@@ -48,6 +48,6 @@ int main() {
     }
 
     cout << winner << '\n';
-    cout << mid_x << ' ' << mid_y;
+    if(winner != 0) cout << mid_x << ' ' << mid_y;
     return 0;
 }
