@@ -12,7 +12,7 @@ int main() {
     int idx, num;
     for(int i=0; i<n; i++) {
         cin >> num>>idx;
-        arr[idx] = num;
+        arr[idx] += num;
     }
 
     int max_sum = 0;
