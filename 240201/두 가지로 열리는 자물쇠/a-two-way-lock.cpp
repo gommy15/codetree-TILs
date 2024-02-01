@@ -14,12 +14,10 @@ int main() {
                 // if((abs(a1-i) <= 2 || abs(a1+n-i) <= 2) && (abs(b1-j) <= 2 || abs(b1+n-j) <= 2)  && (abs(c1-k) <= 2 || abs(c1+n-k) <= 2)) cnt++;
                 // else if((abs(a2-i) <= 2 || abs(a2+n-i) <= 2) && (abs(b2-j) <= 2 || abs(b2+n-j) <= 2)  && (abs(c2-k) <= 2 || abs(c2+n-k) <= 2)) cnt++;
 
-                if((abs(a - i) <= 2 || abs(a - i) >= n - 2) && (abs(b - j) <= 2 || abs(b - j) >= n - 2) && 
-                   (abs(c - k) <= 2 || abs(c - k) >= n - 2))
+                if((abs(a1 - i) <= 2 || abs(a1 - i) >= n - 2) && (abs(b1 - j) <= 2 || abs(b1 - j) >= n - 2) && (abs(c1 - k) <= 2 || abs(c1 - k) >= n - 2))
                     cnt++;
 				
-                else if((abs(a2 - i) <= 2 || abs(a2 - i) >= n - 2) && (abs(b2 - j) <= 2 || abs(b2 - j) >= n - 2) && 
-                   (abs(c2 - k) <= 2 || abs(c2 - k) >= n - 2))
+                else if((abs(a2 - i) <= 2 || abs(a2 - i) >= n - 2) && (abs(b2 - j) <= 2 || abs(b2 - j) >= n - 2) && (abs(c2 - k) <= 2 || abs(c2 - k) >= n - 2))
                     cnt++;
             }
         }
