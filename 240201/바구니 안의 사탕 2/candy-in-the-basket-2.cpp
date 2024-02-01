@@ -17,10 +17,10 @@ int main() {
 
     int max_sum = 0;
 
-    for(int i=0; i<=MAX_N-2*k-1; i++) {
+    for(int i=0; i<=MAX_N; i++) {
         int sum = 0;
-        for(int j=i; j<=i+2*k; j++) {
-            sum += arr[j];
+        for(int j=i-k; j<=i+k; j++) {
+            if(j >= 0 && j <= MAX_N) sum += arr[j];
         }
         max_sum = max(max_sum, sum);
     }
