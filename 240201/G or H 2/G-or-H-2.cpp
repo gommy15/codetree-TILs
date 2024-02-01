@@ -27,7 +27,7 @@ int main() {
                 else cnt_h++;
             }
 
-            if(cnt_g == cnt_h) {
+            if(cnt_g == 0 || cnt_h == 0 || cnt_g == cnt_h) {
                 max_size = max(max_size, (people[j].first - people[i].first));
             }
         }
