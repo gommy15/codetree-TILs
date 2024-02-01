@@ -20,9 +20,13 @@ int main() {
             for(int k=i; k<=j; k++) {
                 sum += arr[k];
             }
-            // 나누기를 했을 때 double 형인지가 중요하다!!
-            // count를 사용하는 방법이 유용한듯! 기억해두자!
-            bool exist = count(arr, arr+n, (double)sum/abs(j-i+1)) >0;
+            //안전하게 완탐으로 같은 값이 있는지 찾자
+            double avg = (double)sum/(j-i+1);
+            bool exist = false;
+            for(int k=i; k<=j; k++) {
+                if(arr[k] == avg) exist = true;
+            }
+            
             if(exist) cnt++;
         }
     }
