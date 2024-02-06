@@ -22,7 +22,7 @@ int main() {
                 for(int l=0; l<6; l++) {
                     if(l==i || l==j || l==k) continue;
                     int tm1 = dev[i] + dev[j];
-                    int tm2 = dev[j] + dev[k];
+                    int tm2 = dev[k] + dev[l];
                     int tm3 = total_sum - tm1 - tm2;
 
                     int max_sum = max(tm1, tm2);
