@@ -7,7 +7,7 @@ int dev[6];
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int total_sum = 0;
+    long total_sum = 0;
     for(int i=0; i<6; i++) {
         cin >> dev[i];
         total_sum += dev[i];
