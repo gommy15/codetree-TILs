@@ -39,6 +39,7 @@ int main() {
         }
     }
 
+    // bool 값을 설정하지 않고 초기 설정값이 그대로 있는지 확인하는 것으로 분리 가능
     if(min_diff == INT_MAX) cout << -1;
     else cout << min_diff;
     return 0;
