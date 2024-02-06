@@ -14,7 +14,7 @@ int main() {
     }
 
     int min_diff = INT_MAX;
-    bool exist = false;
+    // bool exist = false;
     for(int i=0; i<5; i++) {
         for(int j=i+1; j<5; j++) {
             for(int k=0; k<5; k++) {
@@ -27,7 +27,7 @@ int main() {
                     int tm3 = total_sum - tm1 - tm2;
                     
                     if(tm1 == tm2 || tm2 == tm3 || tm3 == tm1) continue;
-                    else exist = true;
+                    // else exist = true;
                     int max_sum = max(tm1, tm2);
                     max_sum = max(max_sum, tm3);
                     int min_sum = min(tm1, tm2);
@@ -39,7 +39,7 @@ int main() {
         }
     }
 
-    if(exist) cout << min_diff;
-    else cout << -1;
+    if(min_diff == INT_MAX) cout << -1;
+    else cout << min_diff;
     return 0;
 }
