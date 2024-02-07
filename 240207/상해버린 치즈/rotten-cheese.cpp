@@ -1,3 +1,4 @@
+//예시를 꼼꼼히 읽고 단계를 나눠서 코드를 진행시켜보자
 #include <iostream>
 #include <algorithm>
 #include <tuple>
