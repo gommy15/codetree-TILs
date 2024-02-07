@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <utility>
 using namespace std;
 #define MAX_N 100
 
