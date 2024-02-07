@@ -20,6 +20,7 @@ int main() {
         int tmp[MAX_N] = {};
 
         for(int j=0; j<n; j++) {
+            // 현재 for문 돌고 있는 문자가 무엇인지 착각하지 말기!!!
             if(i==j) tmp[j] = (p[j]/2);
             else tmp[j] = p[j];
         }
