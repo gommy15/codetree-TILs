@@ -15,8 +15,9 @@ int main() {
 
     int max_num = -1;
     for(int i=0; i<n; i++) {
-        for(int j=1; j<k; j++) {
-            if(arr[i] == arr[i+k]) {
+        for(int j=1; j<=k; j++) {
+            // cout << arr[i] << ' ' << arr[i+j] << '\n';
+            if(arr[i] == arr[i+j]) {
                 max_num = max(max_num, arr[i]);
             }
         }
