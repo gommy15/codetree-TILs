@@ -13,17 +13,19 @@ int main() {
         int numbers[10] = {};
 
         int num = i;
+        int digit = 0;
         while(num) {
             numbers[num%10]++;
             num /= 10;
+            digit++;
         }
 
-        int cnt = 0;
+        bool exist = false;
         for(int j=0; j<10; j++) {
-            if(numbers[j] != 0) cnt++;
+            if(numbers[j] == digit-1) exist = true;
         }
 
-        if(cnt == 2) inter_num++;
+        if(exist) inter_num++;
     }
 
     cout << inter_num;
