@@ -21,7 +21,8 @@ int main() {
 
         for(int i=0; i<n; i++) {
             for(int j=i+1; j<n; j++) {
-                if((nums[i]+nums[j]) == (2*k)) cnt++;
+                // if((nums[i]+nums[j]) == (2*k)) cnt++;
+                if((nums[j]-k) == (k-nums[i])) cnt++;
             }
         }
         max_cnt = max(max_cnt, cnt);
