@@ -8,17 +8,17 @@ int main() {
     // 여기에 코드를 작성해주세요.
     cin >> a>>b>>c;
 
-    int max_time = c/min(a, b);
-    int max_num = 0;
-    for(int i=1; i<=max_time; i++) {
-        int num = a*i + b*(max_time-i);
+    int max_sum = 0;
+    for(int i=0; i*a <= c; i++) {
+        int sum = a*i;
 
-        if(num <= c) {
-            max_num = max(max_num, num);
-        }
+        int b_cnt = (c-sum)/b;
+
+        sum += b*b_cnt;
+
+        max_sum = max(max_sum, sum);
     }
 
-    cout << max_num;
-
+    cout << max_sum;
     return 0;
 }
