@@ -16,7 +16,7 @@
 |[Novice Mid / 완전탐색 II / 값을 기준으로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]등차수열](https://www.codetree.ai/missions/5/problems/arithmetic-sequence)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/240216/%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4/arithmetic-sequence.cpp)|
 |[Novice Mid / 완전탐색 II / 값을 기준으로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]빙산의 일각 2](https://www.codetree.ai/missions/5/problems/the-tip-of-the-iceberg-2)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/240216/%EB%B9%99%EC%82%B0%EC%9D%98%20%EC%9D%BC%EA%B0%81%202/the-tip-of-the-iceberg-2.cpp)|
 |[Novice Mid / 완전탐색 II / 값을 기준으로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]팰린드롬 수 찾기](https://www.codetree.ai/missions/5/problems/find-the-number-of-palindrome)|![보통][medium]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/240216/%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC%20%EC%88%98%20%EC%B0%BE%EA%B8%B0/find-the-number-of-palindrome.cpp)|
-|[Novice Mid / 완전탐색 III / 상황을 일일이 가정해보고 진행하는 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[개념]야바위](https://www.codetree.ai/missions/5/problems/ya-rock)|![쉬움][easy]|![Failed][failed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/240216/%EC%95%BC%EB%B0%94%EC%9C%84/ya-rock.cpp)|
+|[Novice Mid / 완전탐색 III / 상황을 일일이 가정해보고 진행하는 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[개념]야바위](https://www.codetree.ai/missions/5/problems/ya-rock)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/gommy15/codetree-TILs/blob/main/240216/%EC%95%BC%EB%B0%94%EC%9C%84/ya-rock.cpp)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
