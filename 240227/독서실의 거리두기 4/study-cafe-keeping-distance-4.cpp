@@ -30,10 +30,13 @@ int main() {
 
             int min_dis = n;
             for(int k=0; k<cnt-1; k++) {
-                min_dis = min(min_dis, (tmp[k+1]-tmp[k]+1));
+                min_dis = min(min_dis, (tmp[k+1]-tmp[k]));
             }
 
             ans = max(ans, min_dis);
+
+            arr[i] = 0;
+            arr[j] = 0;
         }
     }
 
