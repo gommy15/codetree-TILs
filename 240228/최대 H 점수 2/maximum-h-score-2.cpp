@@ -14,7 +14,8 @@ int main() {
     }
 
     int ans = 0;
-    for(int a=1; a<MAX_N; a++) {
+    // 기준값 설정
+    for(int a=1; a<=MAX_N; a++) {
         int cnt_h = 0;
         int cnt_l = 0;
 
