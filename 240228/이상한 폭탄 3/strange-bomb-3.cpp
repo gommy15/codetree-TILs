@@ -18,7 +18,7 @@ int main() {
     int ans = 0;
     for(int i=0; i<n; i++) {
         int cnt = 0;
-        int pre_idx = 0;
+        int pre_idx = i;
         int des_num = arr[i];
         for(int j=i+1; j<n; j++) {
             if(des_num == arr[j] && j-pre_idx <= k) {
