@@ -15,7 +15,7 @@ int main() {
     }
 
     int max_cnt = 0;
-    int ans;
+    int ans = 0;
     for(int i=0; i<n; i++) {
         int cnt = 0;
         int pre_idx = 0;
