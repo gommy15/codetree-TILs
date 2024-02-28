@@ -1,8 +1,8 @@
 #include <iostream>
 #include <algorithm>
+#include <climits>
 using namespace std;
 #define MAX_N 100
-#define MAX_NUM 10000
 
 int n, k;
 int arr[MAX_N];
@@ -17,7 +17,7 @@ int main() {
     int min_n = *min_element(arr, arr+n);
     int max_n = *max_element(arr, arr+n);
 
-    int ans = MAX_NUM;
+    int ans = INT_MAX;
     for(int a=min_n; a<=max_n; a++) {
         int cost = 0;
 
