@@ -16,7 +16,7 @@ int main() {
 
     // 1부터 시작하여 최댓값이 될 수 있는 수를 찾아가기
     for(int a=1; a<=MAX_A; a++) {
-        int b_cnt = 0;
+        int b_cnt = 1;
         int b_sum = 0;
         bool possible = true;
         for(int i=0; i<n; i++) {
@@ -36,7 +36,7 @@ int main() {
         }
 
         // secssion 개수가 m-1개이고 모든 조건을 만족한 최초의 경우가 정답임
-        if(possible && b_cnt == m-1) {
+        if(possible && b_cnt <= m) {
             cout << a;
             break;
         }
