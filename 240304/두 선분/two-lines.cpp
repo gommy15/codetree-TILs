@@ -9,6 +9,8 @@ int main() {
 
     if((x1 <= x3 && x3 <= x2) || (x1 <= x4 && x4 <= x2)) {
         cout << "intersecting" << endl;
+    } else if ((x3 <= x1 && x1 <= x4) || (x3 <= x2 && x2 <= x4)) {
+        cout << "intersecting" << endl;
     } else {
         cout << "nonintersecting" << endl;
     }
