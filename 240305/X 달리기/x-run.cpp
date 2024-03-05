@@ -12,11 +12,19 @@ int main() {
         t += 2;
         v++;
         len += 2*v;
-        if(len >= x) break;
+        // cout << t << ' ' << v << ' ' << len << endl;
+        if(len == x) break;
+        if(len > x) {
+            len -= 2*v;
+            v--;
+            t -= 2;
+            break;
+        }
     }
 
-    if(len > x) cout << (t-1);
-    else cout << t;
+    if(len == x) cout << t;
+    else if(len + 2*v == x) cout << t+2;
+    else cout << t+1;
 
     // while(true) {
     //     if(len == x) break;
