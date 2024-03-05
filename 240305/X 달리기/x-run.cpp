@@ -9,22 +9,27 @@ int main() {
     int t = 0, v = 0, len = 0;
 
     while(true) {
-        if(len == x) break;
-        if(len < x/2) {
-            v++;
-        } else {
-            if(v != 1) v--;
-        }
-
-        len += v;
-        t++;
-        // cout << t << ' ' << v << ' ' << len << endl;
+        t += 2;
+        v++;
+        len += 2*v;
+        if(len >= x) break;
     }
 
-    if(len == x) cout << t;
-    if(len > x)
+    if(len > x) cout << (t-1);
+    else cout << t;
 
-    cout << t;
+    // while(true) {
+    //     if(len == x) break;
+    //     if(len < x/2) {
+    //         v++;
+    //     } else {
+    //         if(v != 1) v--;
+    //     }
+
+    //     len += v;
+    //     t++;
+    //     cout << t << ' ' << v << ' ' << len << endl;
+    // }
 
     return 0;
 }
