@@ -10,7 +10,7 @@ int main() {
 
     while(true) {
         if(len == x) break;
-        if(len <= x/2) {
+        if(len < x/2) {
             v++;
         } else {
             if(v != 1) v--;
@@ -20,6 +20,9 @@ int main() {
         t++;
         // cout << t << ' ' << v << ' ' << len << endl;
     }
+
+    if(len == x) cout << t;
+    if(len > x)
 
     cout << t;
 
