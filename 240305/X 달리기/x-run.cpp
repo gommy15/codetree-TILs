@@ -23,21 +23,12 @@ int main() {
     }
 
     if(len == x) cout << t;
-    else if(len + 2*v == x) cout << t+2;
-    else cout << t+1;
+    else {
+        cout << (x-len)/v+t;
+    }
+    // else if(len + 2*v == x) cout << t+2;
+    // else cout << t+1;
 
-    // while(true) {
-    //     if(len == x) break;
-    //     if(len < x/2) {
-    //         v++;
-    //     } else {
-    //         if(v != 1) v--;
-    //     }
-
-    //     len += v;
-    //     t++;
-    //     cout << t << ' ' << v << ' ' << len << endl;
-    // }
 
     return 0;
 }
