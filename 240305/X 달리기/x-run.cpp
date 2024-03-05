@@ -22,12 +22,11 @@ int main() {
         }
     }
 
+    // cout << x-len << endl;
+    // cout << t << ' ' << v << ' ' << len << endl;
     if(len == x) cout << t;
-    else {
-        cout << (x-len)/v+t;
-    }
-    // else if(len + 2*v == x) cout << t+2;
-    // else cout << t+1;
+    else if((x-len) > v && (x-len) != v+1) cout << t+2;
+    else cout << t+1;
 
 
     return 0;
