@@ -17,6 +17,7 @@ int main() {
     }
 
     int x=0, y=0;
+    
     for(int i=0; i<n; i++) {
         if(seats[i] == 1) {
             for(int j=i+1; j<n; j++) {
@@ -34,8 +35,10 @@ int main() {
 
     seats[(x+y)/2] = 1;
     int min_len = INT_MAX;
+    int last_seat = 0;
     for(int i=0; i<n; i++) {
         if(seats[i] == 1) {
+            last_seat = i;
             for(int j=i+1; j<n; j++) {
                 if(seats[j] == 1) {
                     min_len = min(min_len, (j-i));
@@ -43,6 +46,8 @@ int main() {
             }
         }
     }
+
+    min_len = max(min_len, (n-1-last_seat));
 
     cout << min_len;
     return 0;
