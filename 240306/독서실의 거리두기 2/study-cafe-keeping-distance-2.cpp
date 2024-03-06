@@ -47,7 +47,21 @@ int main() {
         }
     }
 
-    min_len = max(min_len, (n-1-last_seat));
+    if(seats[n-1] == 0) {
+        seats[(x+y)/2] = 0;
+        seats[n-1] = 1;
+        int min_len2 = INT_MAX;
+        for(int i=0; i<n; i++) {
+           if(seats[i] == 1) {
+                for(int j=i+1; j<n; j++) {
+                   if(seats[j] == 1) {
+                        min_len2 = min(min_len2, (j-i));
+                    }
+                }
+            }
+        }
+        min_len = max(min_len, min_len2);   
+    }
 
     cout << min_len;
     return 0;
