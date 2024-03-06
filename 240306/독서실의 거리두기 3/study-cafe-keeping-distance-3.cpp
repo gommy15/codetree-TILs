@@ -31,14 +31,25 @@ int main() {
     int len = 1;
     int min_len = INT_MAX;
     for(int i=0; i<n; i++) {
-        // cout << seat[i];
-        if(i == 0 && seat[i] == 1) continue;
         if(seat[i] == 1) {
-            min_len = min(min_len, len);
-            len = 1;
-        } else 
-            len++;
+            for(int j=i+1;j<n; j++) {
+                if(seat[j] == 1) {
+                    min_len = min(min_len, j-i);
+                    break;
+                }
+            }
+        }
     }
+    
+    // for(int i=0; i<n; i++) {
+    //     // cout << seat[i];
+    //     if(i == 0 && seat[i] == 1) continue;
+    //     if(seat[i] == 1) {
+    //         min_len = min(min_len, len);
+    //         len = 1;
+    //     } else 
+    //         len++;
+    // }
     // cout << '\n';
     cout << min_len;
     return 0;
