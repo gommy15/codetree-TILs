@@ -67,6 +67,7 @@ int main() {
         seats[(x+y)/2] = 1;
     }
 
+    // 최소 거리 찾기
     int min_len = INT_MAX;
     for(int i=0; i<n; i++) {
         if(seats[i] == 1) {
