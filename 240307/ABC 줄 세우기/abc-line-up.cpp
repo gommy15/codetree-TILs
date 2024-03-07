@@ -28,9 +28,18 @@ int main() {
         if(arr[i] == i) continue;
         for(int j=i+1; j<n; j++) {
             if(arr[j] == i) {
-                ChangeAlpa(j-1, j);
+                int x = j;
+                while(arr[i] != i) {
+                    ChangeAlpa(x-1, x);
+                    x--;
+                }
+                break;
             }
         }
+        // for(int j=0; j<n; j++) {
+        //     cout << (char)(arr[j] + 'A')<< ' ';
+        // }
+        // cout << '\n';
     }
 
     cout << cnt;
