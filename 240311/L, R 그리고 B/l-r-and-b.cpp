@@ -26,12 +26,19 @@ int main() {
         }
     }
 
+    // cout << lx << ' ' << rx << ' ' << bx << '\n';
     if(lx == rx && rx == bx) {
-        cout << abs(ly-by)+1;
+        if((ly < ry && ry < by) || (by < ry && ry < ly))
+            cout << abs(ly-by)+1;
+        else
+            cout << abs(ly-by)-1;
     } else if (ly == ry && ry == by) {
-        cout << abs(lx-bx)+1;
+        if((lx < rx && rx < bx) || (bx < rx && rx < lx))
+            cout << abs(lx-bx)+1;
+        else
+            cout << abs(lx-bx)-1;
     } else
-        cout << abs(lx-bx) + abs(ly-by)-1;
+        cout << abs(lx-bx) + abs(ly-by)-1 << '5';
 
     return 0;
 }
