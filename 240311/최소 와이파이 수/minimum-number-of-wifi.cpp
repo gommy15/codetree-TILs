@@ -17,7 +17,11 @@ int main() {
     if(m == 0) {
         cout << cnt;
         return 0;
+    } else if (n == 1 && cnt == 0) {
+        cout << cnt;
+        return 0;
     }
+    
     int area = 2*m+1;
     cnt = n/area;
     if(n%area != 0) cnt++;
