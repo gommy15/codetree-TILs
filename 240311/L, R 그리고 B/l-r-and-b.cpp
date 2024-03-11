@@ -26,6 +26,12 @@ int main() {
         }
     }
 
-    cout << abs(lx-bx) + abs(ly-by)-1;
+    if(lx == rx && rx == bx) {
+        cout << abs(ly-by)+1;
+    } else if (ly == ry && ry == by) {
+        cout << abs(lx-bx)+1;
+    } else
+        cout << abs(lx-bx) + abs(ly-by)-1;
+
     return 0;
 }
