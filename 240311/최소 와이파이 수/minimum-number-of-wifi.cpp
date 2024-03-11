@@ -3,12 +3,12 @@ using namespace std;
 #define MAX_N 100
 
 int n, m;
-int arr[MAX_N+1];
+int arr[MAX_N];
 
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n>>m;
-    for(int i=1; i<=n; i++) {
+    for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
 
