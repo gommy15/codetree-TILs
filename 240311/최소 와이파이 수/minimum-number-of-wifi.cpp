@@ -24,6 +24,11 @@ int main() {
 
     int area = 2*m+1;
     cnt = n/area;
+    if(n < area) {
+        cnt++;
+        cout << cnt;
+        return 0;
+    }
     if(n%area != 0 && arr[area+1] != 0) cnt++;
 
     cout << cnt;
