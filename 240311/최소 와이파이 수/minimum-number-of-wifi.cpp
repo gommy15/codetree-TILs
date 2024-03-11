@@ -8,28 +8,18 @@ int arr[MAX_N+1];
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n>>m;
-    int cnt = 0;
     for(int i=1; i<=n; i++) {
         cin >> arr[i];
-        if(arr[i] == 1) cnt++;
     }
 
-    if(m == 0) {
-        cout << cnt;
-        return 0;
-    } else if (n == 1 && cnt == 0) {
-        cout << cnt;
-        return 0;
+    //사람이 살고 있는 곳이 나오면 와이파이를 m만큼 떨어진 곳에 놓은 뒤 2m 만큼 떨어져서 다시 탐색 진행!
+    int cnt = 0;
+    for(int i=0; i<n; i++) {
+        if(arr[i] == 1) {
+            cnt++;
+            i += 2*m;
+        }
     }
-
-    int area = 2*m+1;
-    cnt = n/area;
-    if(n < area) {
-        cnt++;
-        cout << cnt;
-        return 0;
-    }
-    if(n%area != 0 && arr[area+1] != 0) cnt++;
 
     cout << cnt;
     return 0;
