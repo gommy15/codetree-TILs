@@ -3,7 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-char arr[10][10];
 string ln;
 
 int main() {
@@ -12,7 +11,6 @@ int main() {
     for(int i=0; i<10; i++) {
         cin >> ln;
         for(int j=0; j<10; j++) {
-            arr[i][j] = ln[j];
             if(ln[j] == 'B') {
                 bx = i;
                 by = j;
