@@ -38,7 +38,7 @@ int main() {
         else
             cout << abs(lx-bx)-1;
     } else
-        cout << abs(lx-bx) + abs(ly-by)-1 << '5';
+        cout << abs(lx-bx) + abs(ly-by)-1;
 
     return 0;
 }
