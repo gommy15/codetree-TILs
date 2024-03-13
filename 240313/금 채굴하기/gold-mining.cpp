@@ -27,6 +27,7 @@ int main() {
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
                 int cnt = 0;
+                // 마름모 날개에 있는 금 개수 확인
                 for(int l=0; l<4; l++) {
                     int nx = i+dx[l]*k, ny = j+dy[l]*k;
                     if(!InRange(nx, ny)) continue;
@@ -43,12 +44,14 @@ int main() {
                             if(arr[a][b] == 1) cnt++;
                         }
                     }
+                } else {
+                    if(arr[i][j] == 1) cnt++;
                 }
 
                 max_cnt = max(max_cnt, cnt);
             }
         }
-
+        // cout << max_cnt << ' ' << (k*k + (k+1)*(k+1)) << '\n';
         if(max_cnt*m > (k*k + (k+1)*(k+1)))
             ans = max(ans, max_cnt);
         else
