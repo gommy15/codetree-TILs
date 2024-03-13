@@ -15,41 +15,38 @@ int main() {
         }
     }
 
-    if(n==1 && m==1) {
-        cout << 2;
-        return 0;
-    }
+    // if(n==1 && m==1) {
+    //     cout << 2;
+    //     return 0;
+    // }
 
     int ans = 0;
     // 각 행별로 확인하기
     for(int i=0; i<n; i++) {
-        int cnt = 1;
+        int cnt = 1, max_seq = 1;
         for(int j=1; j<n; j++) {
             if(arr[i][j-1] == arr[i][j]) cnt++;
             else cnt = 1;
 
-            if(cnt >= m) {
-                ans++;
-                break;
-            }
+            // n이 1이고 m도 1일때의 대비
+            max_seq = max(max_seq, cnt);
         }
+
+        if(max_seq >= m) ans++;
     }
 
     // cout << ans << '\n';
 
     // 각 열별로 확인하기
     for(int i=0; i<n; i++) {
-        int cnt = 1;
+        int cnt = 1, max_seq = 1;
         for(int j=1; j<n; j++) {
             if(arr[j-1][i] == arr[j][i]) cnt++;
             else cnt = 1;
 
-            
-            if(cnt >= m) {
-                ans++;
-                break;
-            }
+            max_seq = max(max_seq, cnt);
         }
+        if(max_seq >= m) ans++;
     }
 
     cout << ans;
