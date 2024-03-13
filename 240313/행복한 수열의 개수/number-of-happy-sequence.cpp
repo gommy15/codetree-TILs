@@ -15,6 +15,11 @@ int main() {
         }
     }
 
+    if(n==1 && m==1) {
+        cout << 2;
+        return 0;
+    }
+
     int ans = 0;
     // 각 행별로 확인하기
     for(int i=0; i<n; i++) {
