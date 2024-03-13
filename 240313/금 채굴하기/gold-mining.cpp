@@ -19,9 +19,25 @@ int main() {
             cin >> arr[i][j];
         }
     }
+    int k = 0;
+    int ans = 0;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            if(arr[i][j] == 1) {
+                ans = 1;
+                k++;
+                break;
+            }
+        }
+        if(k > 0) break;
+    }
 
-    int k=1;
-    int ans = 1;
+    if(k == n) {
+        cout << ans;
+        return 0;
+    }
+
+
     while(true) {
         int max_cnt = 0;
         for(int i=0; i<n; i++) {
