@@ -60,7 +60,7 @@ int n, m, k;
 int grid[MAX_N+1][MAX_N+1];
 
 void Simulate() {
-    int target_row = 1;
+    int target_row = n;
     for(int row = 1; row <= n; row++) {
         bool possible = true;
         for(int col = k; col < k+m; col++) {
