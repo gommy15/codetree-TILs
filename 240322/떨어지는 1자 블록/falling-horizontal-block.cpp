@@ -6,8 +6,7 @@ int n, m, k;
 int grid[MAX_N+1][MAX_N+1];
 
 void Simulate() {
-    k--;
-    for(int row = n-1; row >=0; row--) {
+    for(int row = n; row >0; row--) {
         bool possible = true;
         for(int col = k; col < k+m; col++) {
             if(grid[row][col] == 1) {
@@ -29,16 +28,16 @@ void Simulate() {
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n>>m>>k;
-    for(int i=0; i<n; i++) {
-        for(int j=0; j<n; j++) {
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n; j++) {
             cin >> grid[i][j];
         }
     }
 
     Simulate();
 
-    for(int i=0; i<n; i++) {
-        for(int j=0; j<n; j++) {
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=n; j++) {
             cout << grid[i][j] << ' ';
         }
         cout << '\n';
