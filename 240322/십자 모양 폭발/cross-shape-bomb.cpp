@@ -10,6 +10,7 @@ using namespace std;
 int n;
 int grid[MAX_N][MAX_N];
 
+// 중요!!!
 bool InBombRange(int x, int y, int center_x, int center_y, int bumb_range) {
     return (x == center_x || y == center_y) && abs(x-center_x) + abs(y-center_y) < bumb_range;
 }
