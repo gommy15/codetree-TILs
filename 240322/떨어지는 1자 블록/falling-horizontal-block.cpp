@@ -60,22 +60,24 @@ int n, m, k;
 int grid[MAX_N+1][MAX_N+1];
 
 void Simulate() {
+    int target_row = 1;
     for(int row = 1; row <= n; row++) {
         bool possible = true;
         for(int col = k; col < k+m; col++) {
             if(grid[row][col] == 1) {
                 possible = false;
+                target_row = row-1;
                 break;
             }
         }
 
         if(!possible) {
-            for(int col = k; col < k+m; col++) {
-                grid[row-1][col] = 1;
-            }
-
             break;
         }
+    }
+
+    for(int col = k; col < k+m; col++) {
+        grid[target_row][col] = 1;
     }
 }
 
