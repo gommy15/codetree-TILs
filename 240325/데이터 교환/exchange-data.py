@@ -1,10 +1,6 @@
-a=5
-b=6
-c=7
-tmp = b
-b=a
-a=c
-c=tmp
+a, b, c = 5, 6, 7
+
+a, b, c = c, a, b
 print(a)
 print(b)
 print(c)
