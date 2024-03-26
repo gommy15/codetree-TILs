@@ -46,7 +46,7 @@ int main() {
     cin >> str;
     n = str.size();
 
-    int ans = 10;
+    int ans = 20;
 
     for(int i=0; i<n; i++) {
         Shift();
