@@ -21,11 +21,12 @@ void Bumb(int x, int y) {
         return;
     }
 
+    // cout << area << '\n';
     for(int i=1; i<=area; i++) {
         for(int d=0; d<DIR_NUM; d++) {
             int nx = x+dx[d]*i, ny = y+dy[d]*i;
 
-            if(!InRange(nx, ny)) break;
+            if(!InRange(nx, ny)) continue;
             grid[nx][ny] = 0;
         }
     }
@@ -76,6 +77,7 @@ void Simulate(int col) {
             
             Gravity();
 
+            // cout << '\n';
             // for(int i=0; i<n; i++) {
             //     for(int j=0; j<n; j++) {
             //         cout << grid[i][j] << ' ';
