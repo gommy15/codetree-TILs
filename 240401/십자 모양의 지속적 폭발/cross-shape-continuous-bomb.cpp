@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#define MAX_N 100
+#define MAX_N 200
 #define DIR_NUM 4
 
 int n, m;
