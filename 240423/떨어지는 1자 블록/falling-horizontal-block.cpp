@@ -10,6 +10,13 @@ void Simulate(int col) {
     bool possible = true;
 
     while(true) {
+        if(row >= n) {
+            row--;
+            for(int i=0; i<m; i++) {
+                grid[row][col+i] = 1;
+            }
+            return;
+        }
         for(int i=0; i<m; i++) {
             if(grid[row][col+i] == 1) {
                 possible = false;
