@@ -108,5 +108,7 @@ int main() {
 
         if(Move(mapper[dir], num) == false) break;
     }
+
+    cout << ans;
     return 0;
 }
