@@ -22,7 +22,7 @@ void Move(int x, int y) {
 
         if(!InRange(nx, ny)) continue;
 
-        if(max_num < grid[nx][ny]) {
+        if(grid[x][y] == grid[nx][ny] || max_num < grid[nx][ny]) {
             max_num = grid[nx][ny];
             next_x = nx;
             next_y = ny;
@@ -53,7 +53,9 @@ void Simulate() {
         for(int j=0; j<n; j++) {
             if(new_place[i][j] == 1) place[i][j] = 1;
             else place[i][j] = 0;
+            // cout << place[i][j] << ' ';
         }
+        // cout << '\n';
     }
 }
 
@@ -75,6 +77,7 @@ int main() {
 
     while(t--) {
         Simulate();
+        // cout << '\n';
     }
 
     int ans = 0;
