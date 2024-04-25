@@ -15,14 +15,14 @@ void Move(int x, int y) {
     int dx[DIR_NUM] = {-1, 1, 0, 0};
     int dy[DIR_NUM] = {0, 0, -1, 1};
 
-    int max_num = grid[x][y];
+    int max_num = 0;
     int next_x = x, next_y = y;
     for(int i=0; i<DIR_NUM; i++) {
         int nx = x+dx[i], ny=y+dy[i];
 
         if(!InRange(nx, ny)) continue;
 
-        if(grid[x][y] == grid[nx][ny] || max_num < grid[nx][ny]) {
+        if(max_num < grid[nx][ny]) {
             max_num = grid[nx][ny];
             next_x = nx;
             next_y = ny;
