@@ -7,7 +7,7 @@ using namespace std;
 
 int n, m;
 int grid[MAX_N][MAX_N];
-pair<int, int> dots[MAX_N+1];
+pair<int, int> dots[MAX_N*MAX_N+1];
 
 bool InRange(int x, int y) {
     return 0<=x && x<n && 0<=y && y<n;
