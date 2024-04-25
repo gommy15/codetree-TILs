@@ -62,10 +62,8 @@ int main() {
     
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++){
-            int num;
-            cin >> num;
-            grid[i][j] = num;
-            dots[num] = make_pair(i, j);
+            cin >> grid[i][j];
+            dots[grid[i][j]] = make_pair(i, j);
         }
     }
 
