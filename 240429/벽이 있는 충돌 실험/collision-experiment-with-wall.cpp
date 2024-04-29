@@ -106,7 +106,7 @@ int main() {
             Simulate();
         }
 
-        cout << (int) marbles.size() << endl;
+        cout << (int) marbles.size() << '\n';
     }
     return 0;
 }
