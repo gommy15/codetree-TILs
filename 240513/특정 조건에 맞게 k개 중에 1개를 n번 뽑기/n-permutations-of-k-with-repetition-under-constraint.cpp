@@ -20,6 +20,7 @@ void FindNum(int cur) {
     }
 
     for(int i=1; i<=k; i++) {
+        // 연속으로 세 번 나올때만 제외!
         if(count(num.begin(), num.end(), i) < 2 || (num[cur-1] != i || num[cur-2] != i)) {
             num.push_back(i);
             FindNum(cur+1);
