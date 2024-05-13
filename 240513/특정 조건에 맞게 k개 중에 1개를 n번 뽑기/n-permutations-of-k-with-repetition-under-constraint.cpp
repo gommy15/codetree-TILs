@@ -20,7 +20,7 @@ void FindNum(int cur) {
     }
 
     for(int i=1; i<=k; i++) {
-        if(count(num.begin(), num.end(), i) < 2) {
+        if(count(num.begin(), num.end(), i) < 2 || (num[cur-1] != i || num[cur-2] != i)) {
             num.push_back(i);
             FindNum(cur+1);
             num.pop_back();
