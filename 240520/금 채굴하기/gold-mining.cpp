@@ -6,7 +6,7 @@
 using namespace std;
 #define MAX_N 20
 
-int n, m, ans = 1;
+int n, m, ans;
 int grid[MAX_N][MAX_N];
 
 bool InRange(int x, int y) {
@@ -32,7 +32,7 @@ int Area(int k) {
 }
 
 void Simulate() {
-    for(int k=1; k<=2*(n-1); k++) {
+    for(int k=0; k<=2*(n-1); k++) {
         int max_cnt = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
