@@ -9,16 +9,11 @@ using namespace std;
 int n, m, ans;
 int grid[MAX_N][MAX_N];
 
-bool InRange(int x, int y) {
-    return 0<=x && x<n && 0<=y && y<n;
-}
-
 int CountGold(int x, int y, int k) {
     int cnt = 0;
-    for(int i=x-k; i<=x+k; i++) {
-        for(int j=y-k; j<=y+k; j++) {
-            if(!InRange(i, j)) continue;
-
+    // 범위를 지정하는 것보다 처음부터 반복문을 돌려서 값을 찾는 것이 더 빠르다
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
             if(abs(i-x) + abs(j-y) <= k)
                 cnt += grid[i][j];
         }
@@ -32,6 +27,7 @@ int Area(int k) {
 }
 
 void Simulate() {
+    // k는 2*(n-1)까지 커질 수 있음
     for(int k=0; k<=2*(n-1); k++) {
         int max_cnt = 0;
         for(int i=0; i<n; i++) {
@@ -40,7 +36,8 @@ void Simulate() {
             }
         }
 
-        if(max_cnt*m-Area(k) > 0) {
+        // 손해보지 않는 선이므로 0이상일 때를 기준으로 한다
+        if(max_cnt*m-Area(k) >= 0) {
             ans = max(ans, max_cnt);
         }
     }
