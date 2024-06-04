@@ -83,6 +83,26 @@ void Simulate() {
     Drop();
 }
 
+bool LastBumb() {
+    bool exist = false;
+    for(int col=0; col<n; col++) {
+        for(int row=0; row<n; row++) {
+            if(grid[row][col] != 0) {
+                int cnt = CntBumbs(row, col);
+                if(cnt >= m) {
+                    Bomb(row, col, cnt);
+                    exist = true;
+                }
+            }
+        }
+    }
+
+    if(!exist) return exist;
+
+    Drop();
+    return exist;
+}
+
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n>>m>>k;
@@ -106,16 +126,8 @@ int main() {
 
     }
 
-    for(int col=0; col<n; col++) {
-        for(int row=0; row<n; row++) {
-            if(grid[row][col] != 0) {
-                int cnt = CntBumbs(row, col);
-                if(cnt >= m) {
-                    Bomb(row, col, cnt);
-                }
-            }
-        }
-    }
+    while(LastBumb()) { }
+
 
     int ans = 0;
     for(int i=0; i<n; i++) {
