@@ -97,9 +97,8 @@ bool LastBumb() {
         }
     }
 
-    if(!exist) return exist;
-
     Drop();
+
     return exist;
 }
 
@@ -126,7 +125,15 @@ int main() {
 
     }
 
-    while(LastBumb()) { }
+    while(LastBumb()) {
+        // cout << "*******************************\n";
+        // for(int i=0; i<n; i++) {
+        //     for(int j=0; j<n; j++) {
+        //         cout << grid[i][j] << ' ';
+        //     }
+        //     cout << '\n';
+        // }
+    }
 
 
     int ans = 0;
