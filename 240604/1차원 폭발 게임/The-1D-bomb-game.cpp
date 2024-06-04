@@ -24,7 +24,7 @@ void DeleteBumbs(int x, int cnt) {
 
 bool Simulate() {
     int exist = false;
-    for(int i=0; i<n-1; i++) {
+    for(int i=0; i<n; i++) {
         if(bombs[i] != 0) {
             int nums = CheckBombs(i);
             // cout << nums << '\n';
