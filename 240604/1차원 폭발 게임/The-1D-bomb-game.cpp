@@ -25,7 +25,7 @@ void DeleteBumbs(int x, int cnt) {
 bool Simulate() {
     int exist = false;
     for(int i=0; i<n-1; i++) {
-        if(bombs[i] != 0 && bombs[i] == bombs[i+1]) {
+        if(bombs[i] != 0) {
             int nums = CheckBombs(i);
             if(nums >= m) {
                 DeleteBumbs(i, nums);
