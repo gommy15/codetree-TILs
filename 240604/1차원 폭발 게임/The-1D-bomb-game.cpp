@@ -27,6 +27,7 @@ bool Simulate() {
     for(int i=0; i<n-1; i++) {
         if(bombs[i] != 0) {
             int nums = CheckBombs(i);
+            // cout << nums << '\n';
             if(nums >= m) {
                 DeleteBumbs(i, nums);
                 exist = true;
@@ -59,6 +60,7 @@ int main() {
         cin >> bombs[i];
     }
 
+    ans = n;
     while(Simulate()) {};
 
     cout << ans << '\n';
