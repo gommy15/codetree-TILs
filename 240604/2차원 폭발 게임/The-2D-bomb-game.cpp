@@ -65,26 +65,8 @@ void Rotate() {
     }
 }
 
-void Simulate() {
-    for(int col=0; col<n; col++) {
-        for(int row=0; row<n; row++) {
-            if(grid[row][col] != 0) {
-                int cnt = CntBumbs(row, col);
-                if(cnt >= m) {
-                    Bomb(row, col, cnt);
-                }
-            }
-        }
-    }
-
-    Drop();
-
-    Rotate();
-    Drop();
-}
-
-bool LastBumb() {
-    bool exist = false;
+bool FindAndBumb() {
+    int exist = false;
     for(int col=0; col<n; col++) {
         for(int row=0; row<n; row++) {
             if(grid[row][col] != 0) {
@@ -97,9 +79,17 @@ bool LastBumb() {
         }
     }
 
-    Drop();
-
     return exist;
+}
+
+void Simulate() {
+
+    while(FindAndBumb()) {
+        Drop();
+    }
+
+    Rotate();
+    Drop();
 }
 
 int main() {
@@ -125,7 +115,8 @@ int main() {
 
     }
 
-    while(LastBumb()) {
+    while(FindAndBumb()) {
+        Drop();
         // cout << "*******************************\n";
         // for(int i=0; i<n; i++) {
         //     for(int j=0; j<n; j++) {
