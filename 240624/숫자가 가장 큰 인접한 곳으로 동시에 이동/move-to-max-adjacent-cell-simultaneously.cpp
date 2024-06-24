@@ -28,9 +28,10 @@ pair<int, int> Move_spot(pair<int, int> og) {
 
         if(!InRange(nx, ny)) continue;
 
-        if(grid[nx][ny] > grid[x][y]) {
+        if(grid[nx][ny] > max_num) {
             next_x = nx;
             next_y = ny;
+            max_num = grid[nx][ny]; 
         }
     }
 
@@ -56,9 +57,11 @@ void Simulate() {
 
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
+            // cout << exist[i][j] << ' ';
             if(exist[i][j] == 1)
                 ball.push_back(make_pair(i, j));
         }
+        // cout << '\n';
     }
 }
 
