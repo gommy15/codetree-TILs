@@ -1,60 +1,63 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
-#include <stdlib.h>
+#include <cstdlib>
 using namespace std;
 
-int n;
-vector<int> nums;
+#define NUM_LEN 3
 
-bool Possible() {
-    for(int i=0; i<n; i++) {
-        for(int j=i+1; j<n; j++) {
-            if(nums[i] == nums[j]) {
-                if(j == i+1) return false;
-                
-                int no_seq = false;
-                for(int k=0; k<j-i; k++) {
-                    if(nums[i+k] != nums[j+k]) {
-                        no_seq = true;
-                        break;
-                    } 
-                }
-                if(!no_seq) return false;
-            }
-        }
+int n;
+vector<int> series;
+int numbers[NUM_LEN] = {4, 5, 6};
+
+bool IsEqual(int start1, int end1, int start2, int end2) {
+    for(int i=0; i<=end1-start1; i++) {
+        if(series[start1+i] != series[start2+i])
+            return false;
     }
 
     return true;
 }
 
-void Print() {
-    for(int i=0; i<n; i++) {
-        cout << nums[i];
+bool IsPossibleSeries() {
+    int len = 1;
+    while(true) {
+        int end1 = (int)series.size()-1, start1 = end1 -len+1;
+        int end2 = start1-1, start2 = end2-len+1;
+
+        if(start2 < 0) break;
+
+        if(IsEqual(start1, end1, start2, end2)) return false;
+
+        len++;
     }
+
+    return true;
 }
 
-void FindNum(int cnt) {
+void FindMinSeries(int cnt) {
     if(cnt == n) {
-        if(Possible()) {
-            Print();
-            exit(0);
+        for(int i=0; i<series.size(); i++) {
+            cout << series[i];
         }
-        return;
+        exit(0);
     }
 
-    for(int i=4; i<=6; i++) {
-        nums.push_back(i);
-        FindNum(cnt +1);
-        nums.pop_back();
+    for(int i=0; i<NUM_LEN; i++) {
+        series.push_back(numbers[i]);
+
+        if(IsPossibleSeries()) {
+            FindMinSeries(cnt+1);
+        }
+
+        series.pop_back();
     }
 }
-
 
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n;
 
-    FindNum(0);
-
+    FindMinSeries(0);
     return 0;
 }
