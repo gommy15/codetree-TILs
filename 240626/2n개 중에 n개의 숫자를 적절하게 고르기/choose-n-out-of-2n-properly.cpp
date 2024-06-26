@@ -28,7 +28,7 @@ void FindMinDiff(int cnt, int cur_idx) {
 
     for(int i=cur_idx; i<2*n; i++) {
         select_num.push_back(nums[cur_idx]);
-        FindMinDiff(cnt+1, i);
+        FindMinDiff(cnt+1, i+1);
         select_num.pop_back();
     }
 }
