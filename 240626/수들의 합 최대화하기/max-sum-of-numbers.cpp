@@ -30,8 +30,9 @@ void FindMaxNum(int cnt) {
     }
 
     for(int i=0; i<n; i++) {
+        if(vx[i]) continue;
         for(int j=0; j<n; j++) {
-            if(vx[i] || vy[j]) continue;
+            if(vy[j]) continue;
 
             selected_pos.push_back(make_pair(i, j));
             vx[i] = true;
