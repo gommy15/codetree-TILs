@@ -9,7 +9,7 @@ int nums[MAX_N];
 vector<int> cnums;
 
 int Calc() {
-    int result = 1;
+    int result = 0;
     for(int i=0; i<cnums.size(); i++) {
         result ^= cnums[i];
     }
