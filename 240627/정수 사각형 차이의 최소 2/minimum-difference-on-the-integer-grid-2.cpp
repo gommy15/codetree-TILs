@@ -1,72 +1,68 @@
 #include <iostream>
 #include <algorithm>
-#include <tuple>
 #include <climits>
 using namespace std;
+
 #define MAX_N 100
+#define MAX_R 100
 
 int n;
-int grid[MAX_N][MAX_N];
-tuple<int, int, int> dp[MAX_N][MAX_N];
+int num[MAX_N][MAX_N], dp[MAX_N][MAX_N];
+
+int ans = INT_MAX;
+
+void Initialize() {
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            dp[i][j] = INT_MAX;
+        }
+    }
+
+    dp[0][0] = num[0][0];
+
+    for(int i=1; i<n; i++) {
+        dp[i][0] = max(dp[i-1][0], num[i][0]);
+        dp[0][i] = max(dp[0][i-1], num[0][i]);
+    }
+}
+
+int Solve(int lower_bound) {
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            if(num[i][j] < lower_bound)
+                num[i][j] = INT_MAX;
+        }
+    }
+
+    Initialize();
+
+    for(int i=1; i<n; i++) {
+        for(int j=1; j<n; j++) {
+            dp[i][j] = max(min(dp[i-1][j], dp[i][j-1]), num[i][j]);
+        }
+    }
+    return dp[n-1][n-1];
+}
 
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n;
-    
+
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-            cin >> grid[i][j];
+            cin >> num[i][j];
         }
     }
 
-    dp[0][0] = make_tuple(INT_MAX, grid[0][0], grid[0][0]);
+    for(int lower_bound = 1; lower_bound <= MAX_R; lower_bound++) {
+        int upper_bound = Solve(lower_bound);
 
+        if(upper_bound == INT_MAX) continue;
 
-    for(int i=1; i<n; i++) {
-        int dif, max_num, min_num;
-        tie(dif, max_num, min_num) = dp[i-1][0];
-
-        max_num = max(max_num, grid[i][0]);
-        min_num = min(min_num, grid[i][0]);
-        dif = min(dif, abs(max_num - min_num));
-        dp[i][0] = make_tuple(dif, max_num, min_num);
-
-        tie(dif, max_num, min_num) = dp[0][i-1];
-
-        max_num = max(max_num, grid[0][i]);
-        min_num = min(min_num, grid[0][i]);
-        dif = min(dif, abs(max_num - min_num));
-        dp[0][i] = make_tuple(dif, max_num, min_num);
+        ans = min(ans, upper_bound-lower_bound);
     }
-
-    for(int i=1; i<n; i++) {
-        for(int j=1; j<n; j++) {
-            int dif1, max_num1, min_num1;
-            tie(dif1, max_num1, min_num1) = dp[i-1][j];
-
-            max_num1 = max(max_num1, grid[i][j]);
-            min_num1 = min(min_num1, grid[i][j]);
-            dif1 = min(dif1, abs(max_num1 - min_num1));
-
-            int dif2, max_num2, min_num2;
-            tie(dif2, max_num2, min_num2) = dp[i][j-1];
-
-            max_num2 = max(max_num2, grid[i][j]);
-            min_num2 = min(min_num2, grid[i][j]);
-            dif2 = min(dif2, abs(max_num2 - min_num2));
-            
-            if(dif1 > dif2) {
-                dp[i][j] = make_tuple(dif2, max_num2, min_num2);
-            }else {
-                dp[i][j] = make_tuple(dif1, max_num1, min_num1);
-            }
-        }
-    }
-
-    int ans;
-    tie(ans, ignore, ignore) = dp[n-1][n-1];
 
     cout << ans;
-    
+
     return 0;
 }
