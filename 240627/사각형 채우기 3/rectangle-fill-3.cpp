@@ -4,7 +4,7 @@ using namespace std;
 #define MOD 1000000007
 
 int n;
-int dp[MAX_N+1];
+long long dp[MAX_N+1];
 
 int main() {
     // 여기에 코드를 작성해주세요.
