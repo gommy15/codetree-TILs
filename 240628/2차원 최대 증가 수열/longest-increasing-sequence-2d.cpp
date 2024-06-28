@@ -28,7 +28,7 @@ int main() {
         for(int j=0; j<m; j++) {
             for(int r=0; r<i; r++) {
                 for(int c=0; c<j; c++) {
-                    if(grid[r][c] < grid[i][j]) {
+                    if(grid[r][c] < grid[i][j] && dp[r][c] != 0) {
                         dp[i][j] = max(dp[i][j], dp[r][c]+1);
                     }
                 }
