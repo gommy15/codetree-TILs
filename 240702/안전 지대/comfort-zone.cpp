@@ -3,13 +3,12 @@
 using namespace std;
 #define MAX_NM 50
 #define DIR_NUM 4
+#define MAX_HEIGHT 100
 
 int n, m;
 int height[MAX_NM][MAX_NM];
 bool visited[MAX_NM][MAX_NM];
 int dx[DIR_NUM] = {-1, 1, 0, 0}, dy[DIR_NUM] = {0, 0, -1, 1};
-
-int ans_n, ans_k = 1;
 
 bool InRange(int x, int y) {
     return 0<=x && x<n && 0<=y && y<m;
@@ -39,18 +38,17 @@ int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n>>m;
 
-    int max_h = 0, min_h = 100;
     for(int i=0; i<n; i++) {
         for(int j=0; j<m; j++) {
             cin >> height[i][j];
-            max_h = max(max_h, height[i][j]);
-            min_h = min(min_h, height[i][j]);
         }
     }
 
     // cout << max_h << ' ' << min_h << '\n';
 
-    for(int k=min_h; k<=max_h; k++) {
+    int ans_k = 0, ans_n = -1;
+
+    for(int k=1; k<=MAX_HEIGHT; k++) {
         int safe_n = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<m; j++) {
@@ -60,7 +58,7 @@ int main() {
 
         for(int i=0; i<n; i++) {
             for(int j=0; j<m; j++) {
-                if(height[i][j] > k && visited[i][j] == 0) {
+                if(CanGo(i, j, k)) {
                     safe_n++;
                     visited[i][j] = 1;
                     // cout << i << ' ' << j << '\n';
