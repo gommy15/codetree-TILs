@@ -9,7 +9,7 @@ int height[MAX_NM][MAX_NM];
 bool visited[MAX_NM][MAX_NM];
 int dx[DIR_NUM] = {-1, 1, 0, 0}, dy[DIR_NUM] = {0, 0, -1, 1};
 
-int ans_n, ans_k;
+int ans_n, ans_k = 1;
 
 bool InRange(int x, int y) {
     return 0<=x && x<n && 0<=y && y<m;
