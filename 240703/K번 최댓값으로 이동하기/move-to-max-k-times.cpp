@@ -93,7 +93,7 @@ int main() {
         bfs_q.push(make_pair(x, y));
         BFS(grid[x][y]);
 
-        if(cur_pos == move_pos) break;
+        if(move_pos == make_pair(-1, -1)) break;
         cur_pos = move_pos;
     }
 
