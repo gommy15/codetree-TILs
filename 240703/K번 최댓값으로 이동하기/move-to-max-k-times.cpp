@@ -5,6 +5,7 @@
 using namespace std;
 #define MAX_NK 100
 #define DIR_NUM 4
+#define NOT_EXISTS make_pair(-1, -1)
 
 int n, k;
 int grid[MAX_NK][MAX_NK];
@@ -39,7 +40,7 @@ void BFS(int num) {
                 visited[nx][ny] = 1;
                 bfs_q.push(make_pair(nx, ny));
 
-                if(move_pos == make_pair(-1, -1))
+                if(move_pos == NOT_EXISTS)
                     move_pos = make_pair(nx, ny);
                 else {
                     int r, c;
@@ -93,7 +94,7 @@ int main() {
         bfs_q.push(make_pair(x, y));
         BFS(grid[x][y]);
 
-        if(move_pos == make_pair(-1, -1)) break;
+        if(move_pos == NOT_EXISTS) break;
         cur_pos = move_pos;
     }
 
