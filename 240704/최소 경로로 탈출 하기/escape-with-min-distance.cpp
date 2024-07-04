@@ -12,7 +12,7 @@ bool grid[MAX_NM][MAX_NM], visited[MAX_NM][MAX_NM];
 queue<pair<int, int>> q;
 
 bool InRange(int x, int y) {
-    return 0<=x && x<n && 0<=y && y<n;
+    return 0<=x && x<n && 0<=y && y<m;
 }
 
 bool CanGo(int x, int y) {
