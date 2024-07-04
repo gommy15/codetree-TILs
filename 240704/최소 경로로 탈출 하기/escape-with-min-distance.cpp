@@ -57,8 +57,7 @@ int main() {
         }
     }
 
-    visited[0][0] = 1;
-    q.push(make_pair(0, 0));
+    Push(0, 0, 0);
 
     BFS();
 
