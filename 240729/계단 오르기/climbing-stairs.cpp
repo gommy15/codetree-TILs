@@ -11,7 +11,7 @@ int main() {
     cin >> n;
 
     step[0] = 1;
-    step[1] = 1;
+    step[1] = 0;
     step[2] = 1;
     step[3] = 1;
 
