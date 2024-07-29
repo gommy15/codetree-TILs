@@ -9,7 +9,7 @@ int NumOfUniqueBST(int num) {
     int number_of_unique_bst = 0;
 
     for(int i=0; i<num; i++) {
-        number_of_unique_bst += (dp[i] * dp[n-i-1]);
+        number_of_unique_bst += (dp[i] * dp[num-i-1]);
     }
 
     return number_of_unique_bst;
