@@ -25,7 +25,7 @@ int main() {
     }
 
     Init();
-    // sort(coin, coin+n);
+    sort(coin, coin+n);
 
 
     for(int i=1; i<=m; i++) {
