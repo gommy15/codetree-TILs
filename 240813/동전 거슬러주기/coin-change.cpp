@@ -6,7 +6,7 @@ using namespace std;
 #define MAX_M 10000
 
 int n, m;
-int coin[MAX_N], dp[MAX_M];
+int coin[MAX_N], dp[MAX_M+1];
 
 void Init() {
     for(int i=1; i<=m; i++) {
@@ -25,7 +25,7 @@ int main() {
     }
 
     Init();
-    sort(coin, coin+n);
+    // sort(coin, coin+n);
 
 
     for(int i=1; i<=m; i++) {
