@@ -24,11 +24,11 @@ int main() {
     }
 
     Init();
-    sort(coin, coin+n);
+    // sort(coin, coin+n);
 
     for(int i=1; i<=m; i++) {
         for(int j=0; j<n; j++) {
-            if(i < coin[j]) break;
+            if(i < coin[j]) continue;
             if(dp[i-coin[j]] == INT_MIN) continue;
 
             dp[i] = max(dp[i], dp[i-coin[j]]+1);
