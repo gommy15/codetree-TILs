@@ -35,6 +35,8 @@ int main() {
         m += arr[i];
     }
 
+    Init();
+
     for(int i=1; i<=n; i++) {
         for(int j=-m; j<=m; j++) {
             // 그룹 A에 i번째 원소를 추가하여 그룹A - 그룹B가 j가 된 경우
