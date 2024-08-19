@@ -11,19 +11,30 @@ checked = [
     for _ in range(MAX_R+1)
 ]
 
-cnt = 1
-for x1, y1, x2, y2 in rects:
+# cnt = 1
+# for x1, y1, x2, y2 in rects:
+#     x1, y1 = x1+OFFSET, y1+OFFSET
+#     x2, y2 = x2+OFFSET, y2+OFFSET
+
+#     for x in range(x1, x2):
+#         for y in range(y1, y2):
+#             if cnt != 3:
+#                 checked[x][y] = 1
+#             else:
+#                 checked[x][y] = 0
+    
+#     cnt += 1
+
+for i, (x1, y1, x2, y2) in enumerate(rects, start=1):
     x1, y1 = x1+OFFSET, y1+OFFSET
     x2, y2 = x2+OFFSET, y2+OFFSET
 
     for x in range(x1, x2):
         for y in range(y1, y2):
-            if cnt != 3:
+            if i != 3:
                 checked[x][y] = 1
             else:
                 checked[x][y] = 0
-    
-    cnt += 1
 
 ans = 0
 
