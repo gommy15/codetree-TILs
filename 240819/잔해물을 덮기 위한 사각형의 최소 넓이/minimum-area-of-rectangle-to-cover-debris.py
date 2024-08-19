@@ -32,6 +32,6 @@ for x in range(MAX_R+1):
             y2 = max(y2, y)
 
 if rect_exist:
-    print(0)
-else:
     print((x2-x1+1)*(y2-y1+1))
+else:
+    print(0)
