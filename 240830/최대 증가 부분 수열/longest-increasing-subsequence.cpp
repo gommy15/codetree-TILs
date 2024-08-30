@@ -33,6 +33,11 @@ int main() {
         }
     }
 
-    cout << dp[n];
+    int ans = 0;
+    for(int i=1; i<=n; i++) {
+        ans = max(ans, dp[i]);
+    }
+
+    cout << ans;
     return 0;
 }
