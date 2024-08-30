@@ -25,6 +25,7 @@ int main() {
     for(int i=0; i<n; i++) {
         // 첫 시작은 선분 1개
         dp[i] = 1;
+        
         for(int j=0; j<i; j++) {
             int a2, b1;
             tie(ignore, a2) = lines[j];
