@@ -1,0 +1,96 @@
+#include <iostream>
+#include <algorithm>
+#include <climits>
+#include <tuple>
+using namespace std;
+#define MAX_N 100
+#define MAX_M 10000
+
+// 2차원 dp를 사용한 풀이 (해설 풀이)
+int n, m;
+int dp[MAX_N+1][MAX_M+1];
+int weight[MAX_N+1], value[MAX_N+1];
+
+void Init() {
+    for(int i=0; i<=n; i++) {
+        for(int j=0; j<=m; j++) {
+            dp[i][j] = INT_MIN;
+        }
+    }
+
+    dp[0][0] = 0;
+}
+
+int main() {
+    cin >> n>>m;
+
+    for(int i=1; i<=n; i++) {
+        cin >> weight[i] >> value[i];
+    }
+
+    Init();
+
+    for(int i=1; i<=n; i++) {
+        for(int j=0; j<=m; j++) {
+            if(j >= weight[i]) {
+                dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i]);
+            }
+            else {
+                dp[i][j] = dp[i-1][j];
+            }
+        }
+    }
+
+    int ans = 0;
+    for(int j=0; j<=m; j++) {
+        ans = max(ans, dp[n][j]);
+    }
+
+    cout << ans;
+}
+
+// 1차원 dp를 사용한 풀이 (내 풀이)
+// int n, m;
+// pair<int, int> jew[MAX_N];
+// int dp[MAX_M+1];
+
+// void Init() {
+//     for(int i=1; i<=m; i++) {
+//         dp[i] = INT_MIN;
+//     }
+
+//     dp[0] = 0;
+// }
+
+// int main() {
+//     // 여기에 코드를 작성해주세요.
+//     cin >> n>>m;
+
+//     for(int i=0; i<n; i++) {
+//         int w, v;
+//         cin >> w>>v;
+//         jew[i] = make_pair(w, v);
+//     }
+
+//     Init();
+
+//     for(int i=0; i<n; i++) {
+//         int w, v;
+//         tie(w, v) = jew[i];
+
+//         for(int j=m; j>0; j--) {
+//             if(j-w < 0) continue;
+//             if(dp[j-w] == INT_MIN) continue;
+
+//             dp[j] = max(dp[j], dp[j-w]+v);
+//         }
+//     }
+
+//     int ans = 0;
+//     for(int i=1; i<=m; i++) {
+//         ans = max(ans, dp[i]);
+//     }
+
+//     cout << ans;
+//     return 0;
+// }
