@@ -2,10 +2,11 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <climits>
 using namespace std;
 
 string str;
-int ans = 0;
+int ans = INT_MIN;
 
 vector<int> nums;
 
