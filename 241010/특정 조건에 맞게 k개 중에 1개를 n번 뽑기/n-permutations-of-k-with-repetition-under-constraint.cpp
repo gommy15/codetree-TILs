@@ -21,7 +21,7 @@ void MakeNum(int cnt) {
     }
 
     for(int i=1; i<=k; i++) {
-        if((int)ans.size() >= 3 && (ans[cnt] == ans[cnt-1] && ans[cnt-1] == ans[cnt-2])) continue;
+        if((int)ans.size() >= 2 && (i == ans[cnt-1] && i == ans[cnt-2])) continue;
 
         ans.push_back(i);
         MakeNum(cnt+1);
