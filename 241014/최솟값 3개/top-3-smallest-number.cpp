@@ -22,7 +22,7 @@ int main() {
             int n2 = -pq.top();
             pq.pop();
 
-            int ans = -pq.top();
+            long long ans = -pq.top();
 
             ans = ans*n1*n2;
             pq.push(-n1);
