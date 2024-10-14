@@ -23,7 +23,7 @@ int main() {
         b_diff.insert(num);
     }
 
-    unordered_set<int> ans;
+    // unordered_set<int> ans;
 
     for(int v : a_arr) {
         if(b_diff.find(v) != b_diff.end()) {
