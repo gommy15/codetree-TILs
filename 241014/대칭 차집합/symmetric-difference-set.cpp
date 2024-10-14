@@ -26,14 +26,14 @@ int main() {
     unordered_set<int> ans;
 
     for(int v : a_arr) {
-        if(b_diff.find(v) == b_diff.end()) {
+        if(b_diff.find(v) != b_diff.end()) {
             // ans.insert(v);
             b_diff.erase(v);
         }
     }
 
     for(int v:b_arr) {
-        if(a_diff.find(v) == a_diff.end()) {
+        if(a_diff.find(v) != a_diff.end()) {
             // ans.insert(v);
             a_diff.erase(v);
         }
