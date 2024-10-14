@@ -19,7 +19,7 @@ int main() {
             spot[x] = min(spot[x], y);
     }
 
-    int sum = 0;
+    long long sum = 0;
     for(auto& pair : spot) {
         sum += pair.second;
     }
