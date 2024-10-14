@@ -27,19 +27,21 @@ int main() {
 
     for(int v : a_arr) {
         if(b_diff.find(v) == b_diff.end()) {
-            ans.insert(v);
+            // ans.insert(v);
+            b_diff.erase(v);
         }
     }
 
     for(int v:b_arr) {
         if(a_diff.find(v) == a_diff.end()) {
-            ans.insert(v);
+            // ans.insert(v);
+            a_diff.erase(v);
         }
     }
 
-    // cout << a_diff.size()+b_diff.size();
+    cout << a_diff.size()+b_diff.size();
 
-    cout << ans.size();
+    // cout << ans.size();
 
 
     return 0;
