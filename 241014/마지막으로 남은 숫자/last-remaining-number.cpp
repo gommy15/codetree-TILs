@@ -25,6 +25,7 @@ int main() {
         }
     }
 
-    cout << pq.top();
+    if(pq.empty()) cout << -1;
+    else cout << pq.top();
     return 0;
 }
