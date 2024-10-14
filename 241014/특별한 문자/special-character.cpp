@@ -14,9 +14,9 @@ int main() {
         up[s]++;
     }
 
-    for(auto pair: up) {
-        if(pair.second == 1) {
-            cout << pair.first;
+    for(char s : str) {
+        if(up[s] == 1) {
+            cout << s;
             return 0;
         }
     }
