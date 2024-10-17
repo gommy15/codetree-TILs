@@ -57,7 +57,7 @@ int main() {
 
     int max_saf = -1;
     int ans = 0;
-    for(int k=1; k<max_k; k++) {
+    for(int k=1; k<=max_k; k++) {
         Init_visit();
         int cnt = 0;
         for(int i=0; i<n; i++) {
@@ -69,6 +69,8 @@ int main() {
                 }
             }
         }
+
+        // cout << "------" << cnt << '\n';
 
         if(max_saf < cnt) {
             max_saf = cnt;
