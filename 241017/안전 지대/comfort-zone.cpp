@@ -23,7 +23,7 @@ bool InRange(int x, int y) {
 
 bool Cango(int x, int y, int k) {
     if(!InRange(x, y)) return false;
-    if(visited[x][y] || grid[x][y] < k) return false;
+    if(visited[x][y] || grid[x][y] <= k) return false;
 
     return true;
 }
@@ -55,17 +55,17 @@ int main() {
         }
     }
 
-    int max_saf = 0;
+    int max_saf = -1;
     int ans = 0;
     for(int k=1; k<max_k; k++) {
         Init_visit();
-        int cnt = 1;
+        int cnt = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<m; j++) {
                 if(grid[i][j] > k && visited[i][j] == false) {
+                    cnt++;
                     visited[i][j] = true;
                     DFS(i, j, k);
-                    cnt++;
                 }
             }
         }
