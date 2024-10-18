@@ -13,6 +13,13 @@ bool InRange(int x, int y) {
     return 0<=x && x<n && 0<=y && y<m;
 }
 
+bool Cango(int x, int y) {
+    if(!InRange(x, y)) return false;
+    if(visited[x][y] || grid[x][y] == 0) return false;
+
+    return true;
+}
+
 void BFS() {
     while(!q.empty()) {
         int x = q.front().first;
@@ -24,9 +31,9 @@ void BFS() {
 
         for(int d=0; d<DIR_NUM; d++) {
             int nx = x+dx[d];
-            int ny = y+dx[d];
+            int ny = y+dy[d];
 
-            if(InRange(nx, ny) && !visited[nx][ny]) {
+            if(Cango(nx, ny)) {
                 visited[nx][ny] = true;
                 q.push({nx, ny});
             }
