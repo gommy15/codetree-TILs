@@ -49,4 +49,4 @@ for k in range(max_k+1):
         ans_k = k
 
 
-print(ans, ans_k)
+print(ans_k, ans)
