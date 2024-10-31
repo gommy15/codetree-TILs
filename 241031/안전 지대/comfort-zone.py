@@ -30,11 +30,11 @@ def dfs(x, y, k, visited):
 
 
 ans = 0
-ans_k = 0
+ans_k = 1
 
 max_k = max(max(row) for row in grid)
 
-for k in range(max_k+1):
+for k in range(1, max_k+1):
     cnt = 0
     visited = [[0 for _ in range(m)] for _ in range(n)]
     for i in range(n):
