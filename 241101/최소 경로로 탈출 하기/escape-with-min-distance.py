@@ -1,4 +1,7 @@
 from collections import deque
+import sys
+
+sys.setrecursionlimit(2500)
 
 n, m = tuple(map(int, input().split()))
 
