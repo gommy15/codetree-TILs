@@ -1,7 +1,7 @@
 from collections import deque
 import sys
 
-sys.setrecursionlimit(2500)
+INT_MAX = sys.maxsize
 
 n, m = tuple(map(int, input().split()))
 
@@ -12,11 +12,16 @@ grid = [
 
 q = deque()
 visited = [[0 for _ in range(m)] for _ in range(n)]
+step = [[0 for _ in range(m)] for _ in range(n)]
+
+ans = INT_MAX
 
 def canGo(x, y):
     return 0<=x<n and 0<=y<n and grid[x][y] and not visited[x][y]
 
 def bfs():
+    global ans
+
     dxs, dys = [-1, 0, 1, 0], [0, 1, 0, -1]
 
     while q:
@@ -27,8 +32,11 @@ def bfs():
 
             if canGo(nx, ny):
                 visited[nx][ny] = 1
-                grid[nx][ny] = grid[x][y]+1
                 q.append((nx, ny))
+                step[nx][ny] = step[x][y]+1
+    
+    if visited[n-1][m-1]:
+        ans = step[n-1][m-1]
         
 
 visited[0][0] = 1
@@ -36,9 +44,7 @@ q.append((0, 0))
 
 bfs()
 
-if visited[n-1][m-1]:
-    ans = grid[n-1][m-1]-1
-else:
+if ans == INT_MAX:
     ans = -1
 
 print(ans)
