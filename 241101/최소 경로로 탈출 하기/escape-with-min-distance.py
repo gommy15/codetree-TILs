@@ -14,7 +14,7 @@ step = [[-1 for _ in range(m)] for _ in range(n)]
 
 
 def canGo(x, y):
-    return 0<=x<n and 0<=y<n and grid[x][y] and not visited[x][y]
+    return 0<=x<n and 0<=y<m and grid[x][y] and not visited[x][y]
 
 def bfs():
     global ans
@@ -39,6 +39,5 @@ q.append((0, 0))
 step[0][0] = 0
 
 bfs()
-
 
 print(step[n-1][m-1])
