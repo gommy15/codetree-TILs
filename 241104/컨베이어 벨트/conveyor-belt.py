@@ -2,7 +2,7 @@ n, t = tuple(map(int, input().split()))
 
 arr = list(map(int, input().split()))+list(map(int, input().split()))
 
-while(t != 0):
+while(t):
     tmp = arr[-1]
 
     for i in range(2*n-1, 0, -1):
