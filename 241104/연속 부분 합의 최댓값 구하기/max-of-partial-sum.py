@@ -1,8 +1,12 @@
+import sys
+
 n = int(input())
+
+INT_MIN = -1 * sys.maxsize
 
 arr = list(map(int, input().split()))
 
-dp = [0 for _ in range(n)]
+dp = [INT_MIN for _ in range(n)]
 
 dp[0] = arr[0]
 
