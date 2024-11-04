@@ -9,7 +9,7 @@ dx, dy = [-1, 0, 1, 0], [0, 1, 0, -1]
 ans = 0
 
 def inRange(x, y):
-    return 0<=x<n and 0<=y<n
+    return 0<=x<n and 0<=y<m
 
 def calc1(x, y):
 
