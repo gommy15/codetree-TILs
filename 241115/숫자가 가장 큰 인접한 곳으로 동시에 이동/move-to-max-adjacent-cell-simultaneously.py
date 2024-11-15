@@ -1,4 +1,4 @@
-"""n, m, t = tuple(map(int, input().split()))
+n, m, t = tuple(map(int, input().split()))
 
 grid = [
     list(map(int, input().split()))
@@ -43,10 +43,10 @@ for _ in range(t):
 
 ans = len(ball_spot)
 
-print(ans)"""
+print(ans)
 
 
-
+"""
 n, m, t = tuple(map(int, input().split()))
 
 grid = [
@@ -98,4 +98,4 @@ for _ in range(t):
 
 ans = sum(sum(r) for r in ball)
 
-print(ans)
+print(ans)"""
