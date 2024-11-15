@@ -18,7 +18,7 @@ def move():
     new_ball = [[0]*n for _ in range(n)]
 
     for x, y in ball_spot:
-        max_num = grid[x][y]
+        max_num = 0
         max_pos = (x, y)
 
         for dx, dy in zip(dxs, dys):
@@ -28,9 +28,9 @@ def move():
                 max_pos = (nx, ny)
                 max_num = grid[nx][ny]
         
-        if max_num != grid[x][y]:
-            nx, ny = max_pos
-            new_ball[nx][ny] += 1
+        
+        nx, ny = max_pos
+        new_ball[nx][ny] += 1
 
     ball_spot.clear()
 
