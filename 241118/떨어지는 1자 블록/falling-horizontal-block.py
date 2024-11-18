@@ -14,11 +14,15 @@ for r in range(n):
             exist = True
             break
     
-    if exist or r+1 == n:
+    if exist:
         for c in range(k, k+m):
             grid[r-1][c] = 1
 
         break
+    
+    if r == n-1 and exist==False:
+        for c in range(k, k+m):
+            grid[r][c] = 1
 
 for i in range(n):
     for j in range(n):
