@@ -7,16 +7,16 @@ grid = [
 
 k -= 1
 
-for r in range(n-1, -1, -1):
+for r in range(n):
     exist = False
     for c in range(k, k+m):
         if grid[r][c] == 1:
             exist = True
             break
     
-    if exist == False:
+    if exist == True:
         for c in range(k, k+m):
-            grid[r][c] = 1
+            grid[r-1][c] = 1
 
         break
 
