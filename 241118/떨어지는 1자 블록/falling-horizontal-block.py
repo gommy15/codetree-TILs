@@ -14,7 +14,7 @@ for r in range(n):
             exist = True
             break
     
-    if exist == True:
+    if exist or r+1 == n:
         for c in range(k, k+m):
             grid[r-1][c] = 1
 
