@@ -20,7 +20,7 @@ int main() {
     for(int i=1; i<=n; i++) {
         for(int j=0; j<MAX_M; j++) {
             if(i-nums[j] >= 0) {
-                dp[i] += dp[i-nums[j]];
+                dp[i] += (dp[i-nums[j]]%MOD);
             }
         }
     }
