@@ -7,7 +7,7 @@ using namespace std;
 #define MAX_M 100000
 
 int n, m;
-int arr[MAX_M+1], dp[MAX_N+1][MAX_M+1];
+int arr[MAX_N+1], dp[MAX_N+1][MAX_M+1];
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -18,7 +18,7 @@ int main() {
         m += arr[i];
     }
 
-    dp[0][0] = 0;
+    dp[0][0] = true;
 
     for(int i=1; i<=n; i++) {
         for(int j=0; j<=m; j++) {
