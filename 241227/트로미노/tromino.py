@@ -8,7 +8,7 @@ grid = [
 dx, dy = [-1, 0, 1, 0], [0, 1, 0, -1]
 
 def InRange(x, y):
-    return 0<=x<n and 0<=y<n
+    return 0<=x<n and 0<=y<m
 
 def Sum1(x, y):
     summ = 0
