@@ -25,7 +25,7 @@ def Sum2(x, y):
     summ = 0
     for d in range(2):
         nx1, ny1 = x+dx[d], y+dy[d]
-        nx2, ny2 = x+dx[(d+2)%4], y+dy[(d+2)%4]
+        nx2, ny2 = x+dx[d+2], y+dy[d+2]
 
         if(InRange(nx1, ny1) and InRange(nx2, ny2)):
             summ = max(summ, grid[x][y] + grid[nx1][ny1] + grid[nx2][ny2])
@@ -35,7 +35,7 @@ def Sum2(x, y):
 ans = 0
 
 for i in range(n):
-    for j in range(n):
+    for j in range(m):
         ans = max(ans, Sum1(i, j))
         ans = max(ans, Sum2(i, j))
 
