@@ -10,7 +10,7 @@ ans = 0
 
 def isHappy():
     cnt = 1
-    max_cnt = 0
+    max_cnt = 1
 
     for i in range(1, n):
         if seq[i-1] == seq[i]:
