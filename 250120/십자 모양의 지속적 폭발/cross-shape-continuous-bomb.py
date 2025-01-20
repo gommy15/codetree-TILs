@@ -7,21 +7,21 @@ grid = [
 
 def explode(col):
     dxs, dys = [-1, 0, 1, 0], [0, 1, 0, -1]
-    exist = False
 
     for i in range(n):
         if grid[i][col]:
             area = grid[i][col]
             
             for a in range(area):
-                exist = True
                 for dx, dy in zip(dxs, dys):
                     nx, ny = i+dx*a, col+dy*a
 
                     if 0<=nx<n and 0<=ny<n:
                         grid[nx][ny] = 0
+            
+            return True
     
-    return exist
+    return False
 
 def gravitiy():
     next_grid = [[0 for _ in range(n)] for _ in range(n)]
@@ -39,18 +39,13 @@ def gravitiy():
 
 
 
-while True:
-    if m == 0:
-        break
-    
+for _ in range(m):
     c = int(input())
 
     exist = explode(c-1)
 
     if exist:
         gravitiy()
-
-    m -= 1
 
 for i in range(n):
     for j in range(n):
