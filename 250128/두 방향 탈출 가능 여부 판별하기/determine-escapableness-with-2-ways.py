@@ -10,7 +10,7 @@ visited = [[0 for _ in range(m)] for _ in range(n)]
 dxs, dys = [0, 1], [1, 0]
 
 def inRange(x, y):
-    return 0<=x<n and 0<=y<n
+    return 0<=x<n and 0<=y<m
 
 def canGo(x, y):
     if not inRange(x, y):
