@@ -7,7 +7,7 @@ grid = [
 
 def all_blank(r, s, e):
     return all([
-        not grid[r][c]
+        not grid[r][c] #모든 값이 0이면 True로 반환됨
         for c in range(s, e+1)
     ])
 
