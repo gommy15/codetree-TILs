@@ -45,4 +45,4 @@ for k in range(1, 101):
     if ans < cnt:
         ans, ans_k = cnt, k
 
-print(ans, ans_k)
+print(ans_k, ans)
