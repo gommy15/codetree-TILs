@@ -10,7 +10,7 @@ grid = [
 
 visited = [[False for _ in range(n)] for _ in range(n)]
 
-bomb_cnt, max_bomb = 0, 0
+bomb_cnt, max_bomb = 0, 1
 
 dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
 
@@ -38,6 +38,7 @@ for i in range(n):
 
             if cnt >= 4:
                 bomb_cnt += 1
+            
             max_bomb = max(max_bomb, cnt)
 
 print(bomb_cnt, max_bomb)
