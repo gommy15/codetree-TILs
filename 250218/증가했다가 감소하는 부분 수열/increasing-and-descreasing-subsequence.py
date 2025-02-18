@@ -2,10 +2,8 @@ n = int(input())
 
 arr = list(map(int, input().split()))
 
-upper_dp = [0]*n
-lower_dp = [0]*n
-
-upper_dp[0] = lower_dp[0] = 1
+upper_dp = [1]*n
+lower_dp = [1]*n
 
 for i in range(1, n):
     for j in range(i):
