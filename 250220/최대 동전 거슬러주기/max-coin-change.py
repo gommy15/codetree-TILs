@@ -8,7 +8,7 @@ dp[0] = 0
 
 for i in range(1, m+1):
     for c in coin:
-        if i >= c:
+        if i >= c and dp[i-c] != -1:
             dp[i] = max(dp[i], dp[i-c]+1)
 
 print(dp[m])
