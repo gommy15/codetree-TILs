@@ -13,4 +13,4 @@ for _ in range(n):
         sd[st] = 1
 
 for k, v in sd.items():
-    print(k + " {:.4f}".format(round((v*100)/n, 6)))
+    print(k + " {:.4f}".format(round((v*100)/n, 4)))
