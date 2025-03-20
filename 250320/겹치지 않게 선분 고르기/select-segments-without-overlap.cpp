@@ -6,7 +6,6 @@ vector<pair<int, int>> line;
 vector<pair<int, int>> cho;
 
 bool Check() {
-    sort(cho.begin(), cho.end());
 
     for(int i=1; i<(int)cho.size(); i++) {
         int x, y;
@@ -45,6 +44,7 @@ int main() {
         line.push_back({x, y});
     }
 
+    sort(line.begin(), line.end());
     FindMaxLine(0);
 
     cout << ans;
