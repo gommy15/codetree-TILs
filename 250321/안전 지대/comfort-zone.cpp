@@ -8,7 +8,8 @@ int n, m;
 int grid[MAX_NM][MAX_NM];
 bool visited[MAX_NM][MAX_NM];
 
-int max_k, ans_k, max_save, save_c;
+int max_k, max_save, save_c;
+int ans_k = 1;
 
 bool CanGo(int x, int y, int k) {
     return 0<=x && x<n && 0<=y && y<m && grid[x][y] > k && !visited[x][y];
