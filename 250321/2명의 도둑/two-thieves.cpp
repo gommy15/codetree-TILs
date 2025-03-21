@@ -17,7 +17,7 @@ bool Overlapped(int y1, int y2, int b1, int b2) {
 }
 
 bool Possible(int x, int y, int a, int b) {
-    if (y+m-1 >=m || b+m-1 >=n) return false;
+    if (y+m-1 >=n || b+m-1 >=n) return false;
 
     if (x != a) return true;
 
