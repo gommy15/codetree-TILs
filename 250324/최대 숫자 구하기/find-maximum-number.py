@@ -3,14 +3,10 @@ from sortedcontainers import SortedSet
 n, m = tuple(map(int, input().split()))
 arr = list(map(int, input().split()))
 
-ss = SortedSet()
-
-for i in range(1, m+1):
-    ss.add(i)
+ss = SortedSet(range(1, m+1))
 
 for num in arr:
-    if num in ss:
-        ss.remove(num)
+    ss.remove(num)
     
     print(ss[-1])
 
