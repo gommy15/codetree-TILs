@@ -34,7 +34,7 @@ def bomb(x, y):
                 next_grid[next_r][j] = grid[i][j]
                 next_r -= 1
 
-    grid = next_grid
+    grid = [row[:] for row in next_grid]
 
 def meet_condition(x, y, nx, ny):
     return 0<=nx<n and 0<=ny<n and grid[x][y] and grid[x][y] == grid[nx][ny]
@@ -57,9 +57,9 @@ def calc():
 
 for i in range(n):
     for j in range(n):
-        tmp = grid
+        tmp = [row[:] for row in grid]
         bomb(i, j)
         ans = max(ans, calc())
-        grid = tmp
+        grid = [row[:] for row in tmp]
 
 print(ans)
