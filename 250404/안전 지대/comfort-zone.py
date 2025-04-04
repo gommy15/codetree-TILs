@@ -1,3 +1,7 @@
+import sys
+
+sys.setrecursionlimit(2500)
+
 n, m = tuple(map(int, input().split()))
 
 grid = [
@@ -26,7 +30,7 @@ def dfs(x, y, k):
             visited[nx][ny] = True
             dfs(nx, ny, k)
 
-ans_k = 1
+ans_k = 0
 ans = 0
 
 
