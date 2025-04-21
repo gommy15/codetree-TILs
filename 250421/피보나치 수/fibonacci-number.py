@@ -1,6 +1,12 @@
+import sys
+
 n = int(input())
 
 dp= [0] * (n+1)
+
+if n==1:
+    print(1)
+    sys.exit()
 
 dp[1] = dp[2] = 1
 
