@@ -25,8 +25,6 @@ for _, x, y in cells:
         if 0<=nx<n and 0<=ny<n and grid[nx][ny] > grid[x][y]:
             dp[nx][ny] = max(dp[nx][ny], dp[x][y]+1)
 
-for i in range(n):
-    for j in range(n):
-        ans = max(ans, dp[i][j])
+ans = max(map(max, dp))
 
 print(ans)
