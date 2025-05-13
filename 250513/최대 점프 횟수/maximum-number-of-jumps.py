@@ -4,7 +4,7 @@ arr = list(map(int, input().split()))
 
 dp = [-1] * n
 
-dp[0] = -
+dp[0] = 0
 
 for i in range(n):
     for j in range(0, i):
