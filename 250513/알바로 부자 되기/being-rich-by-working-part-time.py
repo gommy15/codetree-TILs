@@ -17,7 +17,7 @@ for i in range(1, n):
         s, _, p = info[i]
         _, e, _ = info[j]
 
-        if s < e:
+        if e < s:
             dp[i] = max(dp[i], dp[j]+p)
 
 print(max(dp))
