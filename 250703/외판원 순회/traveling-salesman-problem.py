@@ -23,6 +23,7 @@ def find_min_cost(cnt):
             cur_cost = grid[course[i]][course[i+1]]
 
             if cur_cost == 0:
+                course.pop()
                 return
 
             total_cost += cur_cost
