@@ -13,18 +13,20 @@ selc_pos = []
 ans = INT_MAX
 
 def calc():
-    tmp = selc_pos.copy()
+    result = 0
 
-    tmp.sort()
+    for i in range(m):
+        for j in range(i+1, m):
+            x1, y1 = selc_pos[i]
+            x2, y2 = selc_pos[j]
 
-    x1, y1 = tmp[0]
-    x2, y2 = tmp[-1]
+            result = max(result, abs(x2-x1)**2 + abs(y2-y1)**2)
 
-    return abs(x2-x1)**2 + abs(y2-y1)**2
+    return result
 
 def find_min_dist(idx):
     global ans
-    
+
     if len(selc_pos) == m:
         ans = min(ans, calc())
         return
