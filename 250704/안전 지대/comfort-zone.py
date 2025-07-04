@@ -17,7 +17,7 @@ visited = [[False]*m for _ in range(n)]
 
 safe_area = 0
 max_area = 0
-ans_k = 0
+ans_k = 1
 
 def can_go(x, y, k):
     return 0<=x<n and 0<=y<m and not visited[x][y] and grid[x][y] > k
