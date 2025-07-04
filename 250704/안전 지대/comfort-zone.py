@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimits-(2500)
+sys.setrecursionlimit(2500)
 
 n, m = tuple(map(int, input().split()))
 grid = [
@@ -48,4 +48,4 @@ for k in range(1, MAX_K+1):
         ans_k = k
         max_area = safe_area
 
-print(ans_k)
+print(ans_k, max_area)
