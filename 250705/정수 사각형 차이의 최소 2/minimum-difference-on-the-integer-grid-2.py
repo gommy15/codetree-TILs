@@ -1,38 +1,55 @@
 import sys
+
 INT_MAX = sys.maxsize
+MAX_R = 100
 
 n = int(input())
-grid = [
+nums = [
     list(map(int, input().split()))
     for _ in range(n)
 ]
 
-dp = [[(INT_MAX, 0, 0)]*n for _ in range(n)]
+dp = [
+    [0]*n
+    for _ in range(n)
+]
 
-dp[0][0] = (INT_MAX, grid[0][0], grid[0][0])
+ans = INT_MAX
 
-for i in range(1, n):
-    mx = max(dp[i-1][0][2], grid[i][0])
-    mn = min(dp[i-1][0][1], grid[i][0])
 
-    dp[i][0] = (abs(mx-mn), mn, mx)
 
-    mx = max(dp[0][i-1][2], grid[0][i])
-    mn = min(dp[0][i-1][1], grid[0][i])
 
-    dp[0][i] = (abs(mx-mn), mn, mx)
+def init():
+    for i in range(n):
+        for j in range(n):
+            dp[i][j] = INT_MAX
+    
+    dp[0][0] = nums[0][0]
 
-for i in range(1, n):
-    for j in range(1, n):
-        mx1 = max(dp[i-1][j][2], grid[i][j])
-        mn1 = min(dp[i-1][j][1], grid[i][j])
+    for i in range(1, n):
+        dp[i][0] = max(dp[i-1][0], nums[i][0])
+        dp[0][i] = max(dp[0][i-1], nums[0][i])
 
-        mx2 = max(dp[i][j-1][2], grid[i][j])
-        mn2 = min(dp[i][j-1][1], grid[i][j])
+def solve(lb):
+    for i in range(n):
+        for j in range(n):
+            if nums[i][j] < lb:
+                nums[i][j] = INT_MAX
 
-        if abs(mx1-mn1) < abs(mx2-mn2):
-            dp[i][j] = (abs(mx1-mn1), mn1, mx1)
-        else:
-            dp[i][j] = (abs(mx2-mn2), mn2, mx2)
+    init()
 
-print(dp[n-1][n-1][0])
+    for i in range(1, n):
+        for j in range(1, n):
+            dp[i][j] = max(min(dp[i-1][j], dp[i][j-1]), nums[i][j])
+    
+    return dp[n-1][n-1]
+
+for lb in range(1, MAX_R+1):
+    ub = solve(lb)
+
+    if ub == INT_MAX:
+        continue
+    
+    ans = min(ans, ub-lb)
+
+print(ans)
