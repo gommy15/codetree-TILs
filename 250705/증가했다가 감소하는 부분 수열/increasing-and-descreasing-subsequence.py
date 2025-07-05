@@ -2,10 +2,8 @@ n = int(input())
 
 arr = list(map(int, input().split()))
 
-upper = [0]*n
-lower = [0]*n
-
-upper[0] = lower[0] = 1
+upper = [1]*n
+lower = [1]*n
 
 for i in range(1, n):
     for j in range(i):
@@ -18,4 +16,4 @@ for i in range(1, n):
     
     lower[i] = max(lower[i], upper[i])
 
-print(max(max(upper), max(lower)))
+print(max(max(lower), max(upper)))
