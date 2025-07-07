@@ -10,16 +10,14 @@ info.sort()
 dp = [0]*n
 
 for i in range(n):
-    _, e, p1 = info[i]
+    s, _, p1 = info[i]
 
     dp[i] = p1
 
     for j in range(i):
-        s, _, p2 = info[j]
+        _, e, p2 = info[j]
 
-        if s <= e:
-            continue
-        
-        dp[i] = max(dp[i], dp[j]+p1)
+        if e < s:
+            dp[i] = max(dp[i], dp[j]+p1)
 
 print(max(dp))
