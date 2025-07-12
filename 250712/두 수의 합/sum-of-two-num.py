@@ -3,11 +3,17 @@ arr = list(map(int, input().split()))
 
 d = dict()
 
-for i in range(n):
-    for j in range(i+1, n):
-        if arr[i]+arr[j] in d:
-            d[arr[i]+arr[j]] += 1
-        else:
-            d[arr[i]+arr[j]] = 1
+ans = 0
 
-print(d[k])
+for elem in arr:
+    diff = k-elem
+
+    if diff in d:
+        ans += d[diff]
+
+    if elem in d:
+        d[elem] += 1
+    else:
+        d[elem] = 1
+
+print(ans)
