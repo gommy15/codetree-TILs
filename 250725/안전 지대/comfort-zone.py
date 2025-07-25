@@ -7,7 +7,7 @@ grid = [
 max_k = max([max(g) for g in grid])
 visited = [[False]*m for _ in range(n)]
 
-ans_k = 0
+ans_k = 1
 ans_area = 0
 
 def can_go(x, y, k):
