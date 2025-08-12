@@ -12,7 +12,7 @@ for i in range(n):
     d[arr[i]] -= 1
 
     for j in range(i):
-        diff = k - d[arr[i]] - d[arr[j]]
+        diff = k - arr[i] - arr[j]
 
         ans += d.get(diff, 0)
 
