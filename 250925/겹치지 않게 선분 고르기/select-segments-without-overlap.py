@@ -16,7 +16,7 @@ def possible():
         _, y = selc_line[i-1]
         x, _ = selc_line[i]
 
-        if y > x:
+        if y >= x:
             return False
     
     return True
