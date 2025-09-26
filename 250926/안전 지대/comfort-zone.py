@@ -26,7 +26,7 @@ def dfs(x, y, k):
             visited[nx][ny] = True
             dfs(nx, ny, k)
 
-for k in range(1, 51):
+for k in range(1, 101):
     visited = [[False]*m for _ in range(n)]
     cnt = 0
 
