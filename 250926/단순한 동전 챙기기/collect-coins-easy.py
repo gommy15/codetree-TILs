@@ -34,7 +34,7 @@ for c in range(1, COIN_NUM+1):
 
 
 def dist(a, b):
-    ax, ay, bx, by = a, b
+    (ax, ay), (bx, by) = a, b
 
     return abs(ax-bx) + abs(ay-by)
 
@@ -67,5 +67,5 @@ def find_min_moves(idx, cnt):
 
 find_min_moves(0, 0)
 
-print(ans)
+print(ans if ans != INT_MAX else -1)
 
