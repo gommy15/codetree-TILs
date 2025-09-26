@@ -18,6 +18,9 @@ def calc():
     dist = 0
 
     for i in range(n):
+        if grid[course[i]-1][course[i+1]-1] == 0:
+            return INT_MAX
+            
         dist += grid[course[i]-1][course[i+1]-1]
     
     dist += grid[course[n]-1][0]
