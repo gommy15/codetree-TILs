@@ -11,7 +11,7 @@ grid = [
 
 visited = [[False]*m for _ in range(n)]
 ans_max = 0
-ans_k = 0
+ans_k = 1
 
 def can_go(x, y, k):
     return 0<=x<n and 0<=y<m and grid[x][y] > k and not visited[x][y]
