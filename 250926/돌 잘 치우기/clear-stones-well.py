@@ -52,7 +52,7 @@ def bfs():
 
 
 def find_max_area(idx, cnt):
-    global ans, area
+    global ans, area, visited
 
     if idx == len(rocks):
         if cnt == m:
